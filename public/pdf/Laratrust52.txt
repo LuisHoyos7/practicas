@@ -1,0 +1,72 @@
+
+Accedemos a la pagina oficial de laratrust
+
+1. Se ejecuta:
+    composer require "santigarcor/laratrust:5.2.*"
+
+2. Se publican los archivos de configuracion:
+    php artisan vendor:publish --tag="laratrust"
+
+3. Si estos no fueron publicados es necesario que ejecute:
+    php artisan config:clear
+
+4. Para que laratrust se configure automaticamente ejecutamos:
+    php artisan laratrust:setup
+
+5. Por ultimo:
+    composer dump-autoload
+
+6. Ahora se genera la migración de Laratrust
+    php artisan migrate
+    composer dump-autoload
+
+7. Se genera el seeder
+    php artisan laratrust:seeder
+    composer dump-autoload
+
+8. El el archivo database/seeds/DatabaseSeeder.php se agrega la siguiente liniea en run:
+    $this->call(LaratrustSeeder::class);
+
+9. Para entender lo role_structure que debes saber:
+    El primer nivel son los roles.
+    El segundo nivel son los módulos.
+    Las asignaciones de segundo nivel son los permisos.
+
+    return [
+        'role_structure' => [
+            'role' => [
+                'module' => 'permissions',
+            ],
+        ]
+    ];
+
+    Para entender lo permission_structureque debes saber:
+    El primer nivel son los usuarios.
+    El segundo nivel son los módulos.
+    Las asignaciones de segundo nivel son los permisos.
+
+    return [
+        'permission_structure' => [
+            'user' => [
+                'module' => 'permissions',
+            ],
+        ]
+    ];
+
+    Roles:
+        Atencion al usuario
+        Gestion de cartera
+        Cobro coactivo
+        administrador
+
+10. php artisan make:seeder UsersTableSeeder
+
+11.
+
+
+
+
+
+
+
+

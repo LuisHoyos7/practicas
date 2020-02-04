@@ -1,0 +1,80 @@
+.kt-iconbox{
+    padding: 0px !important;
+}
+
+.kt-iconbox .kt-iconbox__body .kt-iconbox__desc .kt-iconbox__title{
+    font-size: 15px !important;
+
+}
+
+
+
+/* .kt-portlet .kt-portlet__body
+{
+    display: flex;
+    flex-direction: column;
+    padding: 5px !important;
+    border-radius: 4px;
+} */
+
+.row1
+{
+    margin-left : 40px !important;
+    margin-right : 40px !important;
+    margin-top : 10px !important;
+    margin-bottom : 0px !important;
+}
+
+.modal-lg, .modal-xl {
+    max-width: 900px !important;
+}
+
+.kt-aside--fixed .kt-wrapper{
+    padding-left: 0;
+}
+
+.kt-header--fixed .kt-header{
+    left:0px !important;
+}
+
+/* .kt-header--fixed.kt-subheader--fixed.kt-subheader--enabled .kt-wrapper{
+    padding-top: 70px !important;
+} */
+
+@media only screen and (min-width: 450px){
+    .kt-header--fixed.kt-subheader--fixed.kt-subheader--enabled .kt-wrapper{
+        padding-top: 70px !important;
+    }
+}
+
+@media only screen and ( max-width: 1024px){
+    .kt-header--fixed.kt-subheader--fixed.kt-subheader--enabled .kt-wrapper{
+        padding-top: 30px !important;
+    }
+}
+
+
+/* Rentas */
+.svg-icon-rentas {
+    margin: 10px !important;
+}
+
+
+
+/* .kt-portlet__body
+{
+    padding: 5px !important;
+} */
+
+
+
+input:read-only {
+    background: #e3e7ec !important;
+}
+
+.hola{
+background: linear-gradient(180deg,#21f63daf,#395177);
+        /* background: -webkit-gradient(linear, left top, left bottom, from(#21c8f6), to(#637bff)) fixed; */
+        /* background: -webkit-gradient(linear, left top, left bottom, from(#21c8f6), to(#395177)) fixed; */
+        background: -webkit-gradient(linear, left top, left bottom, from(#21f62c), to(#395177)) fixed;
+    }

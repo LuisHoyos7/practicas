@@ -4,25 +4,33 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFormatosTable extends Migration
+class CreateDiariosTable extends Migration
 {
-    
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('formatos', function (Blueprint $table) {
+        Schema::create('diarios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('practica_id');
-            $table->string('nombre');
-            $table->boolean('diligenciado');
-            $table->string('objetivo');
+            $table->timestamp('fecha');
+            $table->string('item');
+            $table->string('analisis');
             $table->foreign('practica_id')->references('id')->on('practicas');
             $table->timestamps();
         });
     }
 
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('formatos');
+        Schema::dropIfExists('diarios');
     }
 }

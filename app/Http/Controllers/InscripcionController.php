@@ -89,9 +89,9 @@ class InscripcionController extends Controller
        
         $estudiante = Estudiante::create($estudianteData);
 
-        $m= new SendMailController();
+       // $m= new SendMailController();
 
-        $m->sendMail($user->email,'INSCRIPCION SATISFACTORIA');
+       // $m->sendMail($user->email,'INSCRIPCION SATISFACTORIA');
 
         $inscripcion->inscrito=true;
 

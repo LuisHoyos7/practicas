@@ -22,6 +22,13 @@ Route::resource('practicas', 'PracticaPedagogicaController');
 Route::resource('formatos', 'FormatoPracticaController');
 Route::get('formatos/{practica}/ver', 'FormatoPracticaController@index')->name('formatos_index');
 
+Route::resource('preguntas', 'PreguntaController');
+Route::get('preguntas/{formatopractica}/crear/formato', 'PreguntaController@create')->name('preguntas_create');
+Route::get('preguntas/{formatopractica}/ver', 'PreguntaController@index')->name('preguntas_index');
+
+Route::resource('preguntas_respuestas', 'PreguntaRespuestaController');
+Route::resource('diarios', 'DiarioController');
+
 });
 
 // RUTA DE PRUEBA

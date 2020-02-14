@@ -21,4 +21,14 @@ class Practica extends Model
     {
         return $this->hasMany('App\FormatoPractica', 'practica_id');
     }
+
+    public function diarios()
+    {
+        return $this->hasMany('App\Diario', 'practica_id');
+    }
+
+      public function practicaPedagogica()
+    {
+        return $this->hasOne(PracticaPedagogica::class);
+    }
 }

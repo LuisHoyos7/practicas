@@ -16,7 +16,14 @@ class FormatoPractica extends Model
     
     'practica_id',
     'nombre',
+    'diligenciado',
 
      ];
+
+     public function preguntas()
+    {
+        return $this->hasMany('App\Pregunta', 'formato_id');
+    }
+     
     
 }

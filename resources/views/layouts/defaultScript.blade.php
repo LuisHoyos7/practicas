@@ -90,7 +90,8 @@
 <!--end::Page Scripts -->
 <!-- Select 2 -->
 <script src="{{ asset('metronic/assets/js/pages/crud/forms/widgets/select2.js')}}" type="text/javascript"></script>
-
+<script src="{{ asset('metronic/assets/plugins/custom/tinymce/tinymce.bundle.js')}}" type="text/javascript"></script>
+<script src="{{ asset('metronic/assets/js/pages/crud/forms/editors/tinymce.js')}}" type="text/javascript"></script>
 <script src="{{ asset('js/jquery.number.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/FormatNumber.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/pickerbootstrap.js') }}" type="text/javascript"></script>

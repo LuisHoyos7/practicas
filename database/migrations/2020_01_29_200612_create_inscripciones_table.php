@@ -26,7 +26,7 @@ class CreateInscripcionesTable extends Migration
             $table->string('semestre');
             $table->string('modalidad');
             $table->string('practica');
-            $table->boolean('estado');
+            $table->boolean('inscrito');
             $table->string('sede');
             $table->string('programa');
             $table->timestamps();

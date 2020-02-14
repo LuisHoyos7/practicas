@@ -18,107 +18,6 @@ License: You must have a valid license purchased only from themeforest(the above
         @include('layouts/defaultScript')
 	<!-- end::Head -->
  
-	<style>
-
-h1 {
-  margin: 0;
-  height: 2vmin;
-  width:80vmin;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-em {
-
-margin-top: 110px;
-  font-family: 'Josefin Sans', sans-serif;
-  color: white;
-  font-size: 2vmin;
-  position: relative;
-  font-style: normal;
-  width: 10vmin;
-  text-align: center;
-}
-
-em.planet {
-  -webkit-animation: planet-rotate 4s linear infinite;
-  animation: planet-rotate 4s linear infinite;
-  position: relative;
-}
-
-
-em.planet.left {
-  -webkit-transform-origin: 10vmin 1vmin;
-  transform-origin: 10vmin 1vmin;
-}
-
-em.planet.right {
-  -webkit-transform-origin: -1vmin 2vmin;
-  transform-origin: -1vmin 2vmin;
-}
-
-@-webkit-keyframes planet-rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-  }
-}
-
-@keyframes planet-rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-
-
-@import url(https://fonts.googleapis.com/css?family=Erica+One);
-/* BODY */
-
-
-p {
-
- 
- 
- /* -webkit-animation: bounce .10m ease infinite alternate; */
-  font-family: 'Erica One', cursive;
-  font-size: 50px;
-  color: #FFF;
-  text-align: center;
-  line-height: 100px;
-/*  text-shadow: 0 1px 0 #CCC,
-               0 1px 0 #CCC,
-               0 1px 0 #CCC,
-               0 1px 0 #CCC,
-               0 1px 0 #CCC,
-               0 1px 0 transparent,
-               0 1px 0 transparent,
-               0 1px 0 transparent,
-               0 1px 0 transparent,
-               0 1px 10px rgba(0, 0, 0, .6);
-}
- ANIMATION */
-@-webkit-keyframes bounce {
-  100% {
-    
-    
-    text-shadow: 0 1px 0 #CCC,
-                 0 2px 0 #CCC,
-                 0 3px 0 #CCC,
-                 0 4px 0 #CCC,
-                 0 5px 0 #CCC,
-                 0 6px 0 #CCC,
-                 0 7px 0 #CCC,
-                 0 8px 0 #CCC,
-                 0 9px 0 #CCC,
-                 0 30px 30px rgba(0, 0, 0, .3);
-  }
-}
-
-.btn > .degradado{
-	background: black !important;
-}
-	</style>
 
 	<!-- begin::Body -->
 	<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
@@ -181,7 +80,7 @@ p {
 													<a href="javascript:;" id="kt_login_forgot">He olvidado mi contraseña</a>
 												</div>
 												<div class="kt-login__actions">
-												<button type="submit" class=" btn degradado btn-brand btn-pill btn-elevate ">
+												<button type="submit" class=" btn btn-brand btn-pill btn-elevate ">
 													Ingresar
 												</button>
 												</div>
@@ -201,35 +100,21 @@ p {
 
 								</div>
 							</div>
-							<div class="kt-login__account">
-								<span class="kt-login__account-msg">
-									¿No tienes una cuenta?
-								</span>&nbsp;&nbsp;
-								<a href="javascript:;" id="kt_login_signup" class="kt-login__account-link">Registrate!</a>
-							</div>
+						
 						</div>
 					</div>
 					<div class="kt-grid__item kt-grid__item--fluid kt-grid__item--center kt-grid kt-grid--ver kt-login__content" style="background: linear-gradient(180deg,#21c8f6,#395177)">
 						<div class="kt-login__section">
 							<div class="kt-login__block">
-								<center><h3 class="kt-login__title"><p>!Haz parte de nosotros!</p></h3></center>
+								<center><h3 class="kt-login__title"><p>Sistema de Practicas pedagogicas</p></h3></center>
 								<br>
 								<div class="kt-login__desc">
-									<center><img src="{{asset('logos/logo_transparente_semi_blanco.png')}}" width="300"></center>
+									<center><img src="{{asset('logos/logo_transparente.png')}}" width="150"></center>
 								</div><br><br><br><br>
 							
 								<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 							
-								<div class="div">
-								<h1>
-  								<em>T</em>
-  								<em>A</em>
-  								<em>X</em>
-  								<em>T</em>
-  								<em class="planet left">O</em>
-  								<em class="planet right">O</em>
-  								<em>L</em>
-							</h1></div>
+
 							</div>
 						</div>
 					</div>

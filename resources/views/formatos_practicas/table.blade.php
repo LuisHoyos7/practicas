@@ -54,6 +54,7 @@
         <tr>
             <th>Nombre Formato</th>
             <th>Objetivo</th>
+            <th>Diligenciado</th>
             <th>opciones</th>
         </tr>
     </thead>
@@ -63,13 +64,25 @@
                 <td>{{$formato->nombre}}</td>
                 <td>{{$formato->objetivo}}</td>
                 <td>
+                    @if($formato->diligenciado == true ) Si @endif
+                    @if($formato->diligenciado == false ) No @endif
+                </td>
+                <td>
                     <div class="btn-group">
-                        <a type="button" href="{{route('formatos.index')}}" class="btn btn-bold btn-label-info btn-sm">
-                            Diligenciar
+                         @if($formato->diligenciado == true )
+                        <a type="button" href="{{route('preguntas_index',$formato->id)}}" class="btn btn-bold btn-label-info btn-sm">
+                            Ver
                         </a>
                         <a type="button" href="" class="btn btn-bold btn-label-success btn-sm">
                              Imprimir
                         </a>
+                        @endif
+                        @if($formato->diligenciado == false)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-bold btn-label-info btn-sm">
+                            Diligenciar
+                        </a>
+                        @endif
+                        
                     </div>
                 </td>
             </tr>

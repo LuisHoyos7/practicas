@@ -67,7 +67,17 @@
 <!--begin::Global Theme Bundle(used by all pages) -->
 <script src="{{ asset('metronic/assets/plugins/global/plugins.bundle.js') }}" type="text/javascript"></script>
 <script src="{{ asset('metronic/assets/js/scripts.bundle.js') }}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
 <!--end::Global Theme Bundle -->
 
 <!--begin::Page Vendors(used by this page) -->
@@ -83,9 +93,6 @@
 <script src="{{ asset('metronic/assets/js/pages/crud/forms/widgets/bootstrap-datepicker.js') }}" type="text/javascript"></script>
 <script src="{{ asset('metronic/assets/js/pages/crud/forms/widgets/bootstrap-select.js') }}" type="text/javascript"></script>
 <script src="{{ asset('metronic/assets/js/pages/functions.js') }}" type="text/javascript"></script>
-<script src="{{ asset('metronic/assets/js/pages/contribuyente/declaracion.js') }}" type="text/javascript"></script>
-<script src="{{ asset('metronic/assets/js/pages/contribuyente/campos_calculados_anual_monteria.js') }}" type="text/javascript"></script>
-<script src="{{ asset('metronic/assets/js/pages/contribuyente/campos_calculados_reteica_monteria.js') }}" type="text/javascript"></script>
 
 <!--end::Page Scripts -->
 <!-- Select 2 -->

@@ -61,9 +61,9 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Estudiante $estudiante)
     {
-        //
+        return view('estudiantes.edit', compact ('estudiante'));
     }
 
     /**
@@ -73,9 +73,41 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Estudiante $estudiante)
     {
-        //
+    
+        $dataUser = 
+        [
+            'first_name'        => $request->first_name,
+            'last_name'         => $request->last_name,
+            'email'             => $request->correo,
+            'direccion'         => $request->direccion,
+            'telefono'          => $request->celular,
+            'identificacion'    => $request->identificacion,
+        ];
+
+        $user = User::findOrFail($estudiante->user_id);
+        
+        $user->update($dataUser);
+
+        $dataStudent = 
+        [
+            'tipoidentificacon'     => $request->tipoidentificacion,
+            'semestre'              => $request->semestre,
+            'sede'                  => $request->sede,
+            'practica'              => $request->practica,
+            'modalidad'             => $request->modalidad,
+            'programa'              => $request->programa,
+            'ciudad'                => $request->ciudad,
+        ];
+
+        $estudiante = Estudiante::findOrFail($estudiante->id);
+
+        $estudiante->update($dataStudent);
+
+        toastr()->success('Estudiante Modificado con Exito');
+
+        return redirect()->route('estudiantes.index');
     }
 
     /**

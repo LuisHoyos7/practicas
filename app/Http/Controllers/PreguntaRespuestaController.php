@@ -22,11 +22,13 @@ class PreguntaRespuestaController extends Controller
     
     public function store(Request $request)
     {
-       
+      
+        
         foreach($request->opcionpregunta_id as $pregunta=>$respuesta)
         {
             $estudiante_id = auth()->user()->estudiante->id;
         
+            
             $data = 
             [
                 'pregunta_id'           => $pregunta,
@@ -38,13 +40,27 @@ class PreguntaRespuestaController extends Controller
             PreguntaRespuesta::insert($data);
         }
 
+        foreach($request->observaciones as $pregunta=>$observacion)
+        {
+           $dataUpdate =
+           [
+                  'pregunta_id'           => $pregunta,
+                  'observaciones'         => $observacion['observacion']
+
+           ];
+
+     
+          PreguntaRespuesta::where('pregunta_id', $pregunta)->where('estudiante_id',$estudiante_id)->update($dataUpdate);
+           
+        }
+
         $formato = FormatoPractica::find($request->formato_id);
 
         $formato->update(['diligenciado' => 'true']);
 
         toastr()->success('formato diligenciado con exito');
 
-        return redirect()->route('formatos_index');
+        return redirect()->route('formatos_index',$request->formato_id);
     }
 
     

@@ -43,16 +43,6 @@
     </div>
 
     <input style="display:none" name="estudiante_id" type="text" class="form-control" readonly value="{{$estudiante->id}}">
-
-    {{-- <div class="col-md-2">
-        <div class="form-group">
-            <label for="sede">ingrese la Fecha de Inico</label>
-            <div class="kt-input-icon">
-                {{Form::select('sede_id', $sedes , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
-                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-home" style="margin-right:30px"></i></span></span>
-            </div>    
-        </div>
-    </div> --}}
 </div>
 
 <div class="row">

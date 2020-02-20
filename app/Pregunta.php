@@ -26,4 +26,9 @@ class Pregunta extends Model
     {
         return $this->hasOne('App\PreguntaRespuesta', 'pregunta_id');
     }
+
+    public function observaciones()
+    {
+        return $this->hasMany('App\Observacion','pregunta_id');
+    }
 }

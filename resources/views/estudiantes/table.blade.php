@@ -8,7 +8,7 @@
     </div>
 <div class="row">      
     <div class="kt-portlet__body row1">
-        <table class="table table-hover" id="predio">
+        <table class="table table-hover" id="estudiantes">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -33,10 +33,10 @@
                         <td>{{$estudiante->sede}}</td>
                         <td>
                             <div class="btn-group">
-                                <a type="button" href="{{ route('practicas.index', $estudiante->id) }}" class="btn btn-bold btn-label-info btn-sm">
+                                <a type="button" href="{{ route('practicas.index', $estudiante->id) }}" class="btn btn-success btn-sm">
                                     Practicas
                                 </a>
-                                <a type="button" href="{{ route('aprobar_inscripcion', $estudiante->id) }}" class="btn btn-bold btn-label-success btn-sm">
+                                <a type="button" href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-danger btn-sm">
                                      Editar
                                 </a>
                             </div>

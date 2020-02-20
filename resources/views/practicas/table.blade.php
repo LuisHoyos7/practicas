@@ -20,7 +20,7 @@
     </div>
 <div class="row">      
     <div class="kt-portlet__body row1">
-        <table class="table table-hover" id="predio">
+        <table class="table table-hover" id="practica">
             <thead>
                 <tr>
                     <th>Nombre Practica Pedagogica</th>
@@ -41,14 +41,14 @@
                         
                         <td>
                             <div class="btn-group">
-                                <a type="button" href="{{route('formatos_index',$practica_pedagogica->practica->id)}}" class="btn btn-bold btn-label-success btn-sm">
+                                <a type="button" href="{{route('formatos_index',$practica_pedagogica->practica->id)}}" class="btn btn-success btn-sm">
                                     Instrumentos
                                 </a>
-                                <a type="button" href="{{route('diarios.index',['idPractica'=>$practica_pedagogica->practica->id])}}" class="btn btn-bold btn-label-danger btn-sm">
+                                <a type="button" href="{{route('diarios.index',['idPractica'=>$practica_pedagogica->practica->id])}}" class="btn btn-danger btn-sm">
                                     Diarios
                                </a>
 
-                               <a type="button" href="" class="btn btn-bold btn-label-info btn-sm">
+                               <a type="button" href="" class="btn btn-info btn-sm">
                                     Producto
                                </a>
                             </div>

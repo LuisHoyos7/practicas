@@ -22,7 +22,7 @@ class PreguntaController extends Controller
     {
         $preguntas = $formatopractica->preguntas;
         
-        return view('preguntas.create',compact('preguntas'));
+        return view('preguntas.create',compact('preguntas','formatopractica'));
     }
 
 }

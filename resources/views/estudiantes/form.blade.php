@@ -1,73 +1,57 @@
-<style>hr{margin: 30px; color: #2d2d2d70; border: 0.5px dotted;}</style>
-
 <div class="kt-portlet__head">
     <div class="kt-portlet__head-label">
         <h3 class="kt-portlet__head-title">
-            Agregar Nuevo Pre Inscripcion
+           Registrar Informacion al Diario de Campo
         </h3>
     </div>
 </div>
 
-<form  id="guardar_inscripcion" action="{{route('inscripciones.store')}}" method="POST" class="kt-form ignorarform">
+@if(empty($estudiante))
+{!! Form::open(['route' => 'estudiantes.store']) !!}
+@else
+{!! Form::model($estudiante, ['route' => ['estudiantes.update', $estudiante->id], 'method' => 'PUT']) !!}
+@endif
 
-{{csrf_field()}}
-{{method_field('POST')}}
+<input type="text" name="estudiante_id" value="{{$estudiante->id}}">
+<div class="row row1">
+    <div class="col-md-4">
+        <label>
+            Nombre
+        </label>
+        <input type="text" class="form-control" name="first_name" value="{{auth()->user()->first_name}}">
+    </div>
+    <div class="col-md-4">
+        <label>
+            Apellidos
+        </label>
+        <input type="text" class="form-control" name="last_name" value="{{auth()->user()->last_name}}">
+    </div>
+    <div class="col-md-4">
+        <label>
+            Identificacion
+        </label>
+        <input type="text" class="form-control"  name="identificacion" value="{{auth()->user()->identificacion}}">
+    </div>
+</div>
 
 <div class="row row1">
     <div class="col-md-3">
-        <div class="form-group">
-            <label for="nombres">Nombres</label>
+        <label for="tipoidentificacion">Tipo Identificacion</label>
             <div class="kt-input-icon">
-                <input name="nombres" type="text" class="form-control" placeholder="ingrese sus nombres">
-                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-user"></i></span></span>
-            </div>    
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="apellidos">Apellidos</label>
-            <div class="kt-input-icon">
-                <input name="apellidos" type="text" class="form-control" placeholder="ingrese sus apellidos">
-                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-user"></i></span></span>
-            </div>    
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        
-            <label for="tipoidentificacion">Tipo Identificacion</label>
-            <div class="kt-input-icon">
-                <select name="tipoidentificacion" class="form-control">
+                <select name="tipoidentificacion" class="form-control" value="{{@$estudiante->tipoidentificacion}}">
                     <option value="CEDULA DE CIUDADANIA" selected>CEDULA DE CIUDADANIA</option> 
                     <option value="TARJETA DE IDENTIDAD" >TARJETA DE IDENTIDAD</option>
                     <option value="CEDULA DE EXTRANJERIA">CEDULA DE EXTRANJERIA</option>
                   </select>
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-profile" style="margin-right:30px"></i></span></span>
             </div>    
-        
     </div>
-
-    <div class="col-md-3">
-        <div class="form-group">
-            <label for="identificacion">Identificacion</label>
-            <div class="kt-input-icon">
-                <input required name="identificacion" type="text" class="form-control" placeholder="identificacion">
-                @if ($errors->has('identificacion'))
-					<span class="text-danger">{{ $errors->first('identificacion') }}</span>
-				@endif  
-                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-profile-1"></i></span></span>
-            </div>    
-        </div>
-    </div>
-</div><hr>
-
-<div class="row row1">
-    <div class="col-md-3">
+    
+    <div class="col-md-2">
         <div class="form-group">
             <label for="celular">Celular</label>
             <div class="kt-input-icon">
-                <input name="celular" type="text" class="form-control" placeholder="celular">
+                <input name="celular" type="text" class="form-control" placeholder="celular" value="{{auth()->user()->telefono}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-phone"></i></span></span>
             </div>    
         </div>
@@ -77,7 +61,7 @@
         <div class="form-group">
             <label for="direccion">direccion</label>
             <div class="kt-input-icon">
-                <input name="direccion" type="text" class="form-control" placeholder="direccion">
+                <input name="direccion" type="text" class="form-control" placeholder="direccion" value="{{auth()->user()->direccion}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-placeholder-2"></i></span></span>
             </div>    
         </div>
@@ -87,7 +71,7 @@
         <div class="form-group">
             <label for="correo">correo</label>
             <div class="kt-input-icon">
-                <input required name="correo" type="text" class="form-control" placeholder="correo">
+                <input required name="correo" type="text" class="form-control" placeholder="correo" value="{{auth()->user()->email}}">
                 @if ($errors->has('correo'))
 					<span class="text-danger">{{ $errors->first('correo') }}</span>
 				@endif  
@@ -96,8 +80,10 @@
             </div>    
         </div>
     </div>
+</div>
 
-    <div class="col-md-2">
+<div class="row row1">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="semestre">semestre</label>
             <div class="kt-input-icon">
@@ -113,10 +99,8 @@
             </div>    
         </div>
     </div>
-</div><hr>
 
-<div class="row row1">
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="form-group">
             <label for="practica">practica</label>
             <div class="kt-input-icon">
@@ -131,7 +115,6 @@
             </div>    
         </div>
     </div> 
-    dd({{($estudiante->correo}}
 
     <div class="col-md-2">
         <div class="form-group">
@@ -146,7 +129,7 @@
         </div>
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="modalidad">modalidad</label>
             <div class="kt-input-icon">
@@ -158,7 +141,9 @@
             </div>    
         </div>
     </div>
+</div>
 
+<div class="row row1">
     <div class="col-md-4">
         <div class="form-group">
             <label for="programa">programa</label>
@@ -175,7 +160,7 @@
         <div class="form-group">
             <label for="ciudad">Ciudad</label>
             <div class="kt-input-icon">
-                <input name="ciudad" type="text" class="form-control" placeholder="ciudad">
+                <input name="ciudad" type="text" class="form-control" placeholder="ciudad" value="{{@$estudiante->ciudad}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-earth-globe"></i></span></span>
             </div>    
         </div>
@@ -186,13 +171,11 @@
     <div class="col-md-12">
         <center>
             <button class="submit btn btn-success btn-md" >
-                Guardar
+                {{empty($estudiante) ? 'Guardar' : 'Actualizar'}}
             </button>
         </center>
     </div>
 </div><br>
 
-</form>
-
-
+{!! Form::close() !!}
 

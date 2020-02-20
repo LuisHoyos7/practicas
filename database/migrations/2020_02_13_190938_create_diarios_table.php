@@ -16,10 +16,12 @@ class CreateDiariosTable extends Migration
         Schema::create('diarios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('practica_id');
+            $table->integer('estudiante_id');
             $table->timestamp('fecha');
             $table->string('item');
             $table->string('analisis');
             $table->foreign('practica_id')->references('id')->on('practicas');
+            $table->foreign('estudiante_id')->references('id')->on('estudiantes');
             $table->timestamps();
         });
     }

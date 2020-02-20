@@ -18,7 +18,7 @@
 
     <div class="row">      
         <div class="kt-portlet__body row1">
-            <table class="table table-hover">
+            <table class="table table-hover" id="diario">
                 <thead>
                     <tr>
                         <th>Fecha de creacion del Diario</th>
@@ -31,20 +31,22 @@
                     @foreach ($practica->diarios as $diario )
                     <tr>
                         <td>{{$diario->fecha}}</td>
-                        <td>{{$practica->first()->nombre}}</td>
-                        <td>{{$practica->first()->practicaPedagogica->semestre->nombre}}</td>
+                        <td>{{$practica->nombre}}</td>
+                        <td>{{$practica->practicaPedagogica->semestre->nombre}}</td>
                     
-                        <div class="btn-group">
+                        
                             <td>
-                                <a href="{{route('diarios.edit', ['idPractica' => $practica->first()->id, $diario->id ])}}" class="btn btn-success">
+                                <div class="btn-group">
+                                <a href="{{route('diarios.edit', ['idPractica' => $practica->first()->id, $diario->id ])}}" class="btn btn-success btn-sm">
                                 Editar
                                 </a>
 
-                                <a href class="btn btn-danger">
+                                <a href class="btn btn-danger btn-sm">
                                 Pdf
                                 </a>
+                                </div>
                             </td>
-                        </div>
+                        
                     </tr>
                     @endforeach
                 </tbody>

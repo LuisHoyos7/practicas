@@ -11,7 +11,7 @@ class CreateFormatosTable extends Migration
     {
         Schema::create('formatos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigIntege('practica_id');
+            $table->unsignedBigInteger('practica_id');
             $table->string('nombre');
             $table->boolean('diligenciado');
             $table->string('objetivo');

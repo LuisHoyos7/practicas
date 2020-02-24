@@ -26,7 +26,7 @@ class InscripcionController extends Controller
     public function create()
     {
        
-        return view ('inscripciones.create'));
+        return view ('inscripciones.create');
     }
 
     public function store(Request $request)

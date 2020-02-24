@@ -15,9 +15,9 @@ class CreatePracticaPedagogicasTable extends Migration
     {
         Schema::create('practica_pedagogicas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('practica_id');
-            $table->integer('estudiante_id');
-            $table->integer('semestre_id');
+            $table->unsignedBigInteger('practica_id');
+            $table->unsignedBigIntege('estudiante_id');
+            $table->unsignedBigIntege('semestre_id');
             $table->foreign('practica_id')->references('id')->on('practicas');
             $table->foreign('semestre_id')->references('id')->on('semestres');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes');

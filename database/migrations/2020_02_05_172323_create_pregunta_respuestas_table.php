@@ -15,9 +15,9 @@ class CreatePreguntaRespuestasTable extends Migration
     {
         Schema::create('pregunta_respuestas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pregunta_id');
-            $table->integer('opcionpregunta_id');
-            $table->integer('estudiante_id');
+            $table->unsignedBigInteger('pregunta_id');
+            $table->unsignedBigInteger('opcionpregunta_id');
+            $table->unsignedBigInteger('estudiante_id');
             $table->foreign('opcionpregunta_id')->references('id')->on('opcion_preguntas');
             $table->foreign('pregunta_id')->references('id')->on('preguntas');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes');

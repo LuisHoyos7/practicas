@@ -15,8 +15,8 @@ class CreateDiariosTable extends Migration
     {
         Schema::create('diarios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('practica_id');
-            $table->integer('estudiante_id');
+            $table->unsignedBigInteger('practica_id');
+            $table->unsignedBigInteger('estudiante_id');
             $table->timestamp('fecha');
             $table->string('item');
             $table->string('analisis');

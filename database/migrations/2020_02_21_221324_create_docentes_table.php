@@ -15,7 +15,7 @@ class CreateDocentesTable extends Migration
     {
         Schema::create('docentes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('tipodocente_id');
+            $table->unsignedBigInteger('tipodocente_id');
             $table->string('titulo');
             $table->foreign('tipodocente_id')->references('id')->on('tipo_docentes');
             $table->timestamps();

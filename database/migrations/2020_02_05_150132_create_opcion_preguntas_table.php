@@ -16,7 +16,7 @@ class CreateOpcionPreguntasTable extends Migration
         Schema::create('opcion_preguntas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->integer('pregunta_id');
+            $table->unsignedBigInteger('pregunta_id');
             $table->foreign('pregunta_id')->references('id')->on('preguntas');
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class CreatePreguntasTable extends Migration
         Schema::create('preguntas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->integer('formato_id');
+            $table->unsignedBigInteger('formato_id');
             $table->foreign('formato_id')->references('id')->on('formatos');
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ class CreateDocenteGruposTable extends Migration
     {
         Schema::create('docente_grupos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('docente_id');
-            $table->integer('grupo_id');
+            $table->unsignedBigInteger('docente_id');
+            $table->unsignedBigInteger('grupo_id');
             $table->timestamp('fecha');
             $table->foreign('docente_id')->references('id')->on('docentes');
             $table->foreign('grupo_id')->references('id')->on('grupos');

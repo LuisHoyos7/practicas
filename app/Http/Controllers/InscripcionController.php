@@ -25,14 +25,8 @@ class InscripcionController extends Controller
 
     public function create()
     {
-        $semestres              = Semestre::pluck('nombre', 'id');        
-        $modalidades            = Modalidad::pluck('nombre', 'id');
-        $tipo_identificaciones  = TipoIdentificacion::pluck('nombre', 'id');
-        $programas              = Programa::pluck('nombre', 'id');
-        $sedes                  = Sede::pluck('nombre','id');
-        $practicas              = Practica::pluck('nombre','id');
-
-        return view ('inscripciones.create',compact('semestres', 'modalidades', 'tipo_identificaciones', 'programas', 'sedes','practicas'));
+       
+        return view ('inscripciones.create'));
     }
 
     public function store(Request $request)

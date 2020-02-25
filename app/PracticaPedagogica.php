@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class PracticaPedagogica extends Model
 {
-    public $timestamps = false;
-    protected $table = 'public.practica_pedagogicas';
-    protected $primaryKey = 'id';
-    protected $guarded = ['id'];
+  
+    protected $table = 'practica_pedagogicas';
+    
     protected $fillable = 
     [
 

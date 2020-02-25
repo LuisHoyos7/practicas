@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class FormatoPractica extends Model
 {
 
+    protected $table = 'formatos';
     protected $fillable = 
     [
     

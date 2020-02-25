@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Practica extends Model
 {
-    public $timestamps = false;
-    protected $table = 'public.practicas';
-    protected $primaryKey = 'id';
-    protected $guarded = ['id'];
+
+    protected $table = 'practicas';
+
     protected $fillable = 
     [
 

@@ -104,57 +104,66 @@ License: You must have a valid license purchased only from themeforest(the above
     @toastr_render - for render toastr notification.
 
     <link  href="{{ asset('metronic/assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
-
 	<!-- begin::Body -->
 	<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
-
-		<!-- begin:: Page -->
-
+        <!-- begin:: Page -->
+        
 		<!-- begin:: Header Mobile -->
-		<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed" >
-			<div class="kt-header-mobile__logo">
-				<a href="index.html">
-				    <img alt="Logo" src="{{asset('logos/logo_transparente_semi_blanco.png')}}" width="100px" />
-				</a>
-			</div>
-			<div class="kt-header-mobile__toolbar">
-				<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
-			</div>
+	<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed" >
+		<div class="kt-header-mobile__logo">
+			<a href="index.html">
+				<img alt="Logo" src="{{asset('logos/logo_transparente_semi_blanco.png')}}" width="100px" />
+			</a>
+        </div>
+        
+		<div class="kt-header-mobile__toolbar">
+			<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
 		</div>
+    </div>
+        <!-- end:: Header Mobile -->
+        
 
-		<!-- end:: Header Mobile -->
-		<div class="kt-grid kt-grid--hor kt-grid--root">
-			<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-					<!-- begin:: Header -->
-                    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
-                        <!-- begin: Header Menu -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+	<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+		<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+                    
+            <!-- begin:: Header -->
+                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+                     <!-- begin: Header Menu -->
                         <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
-                        <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
-                            <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab ">
-                                <ul class="kt-menu__nav ">
-                                    <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true">
-                                        <a href="{{ route('home')}}" style="margin-right: 50px; ">
-                                            <img alt="Logo" src="{{asset('logos/logo_transparente.png')}}" width="140px" height="70"/>
-                                        </a>
-                                    </li>
-									
-									<!-- Preinscripcion -->
-                                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{ route('inscripciones.create')}}" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building"></i><span class="kt-menu__link-text"> <center> Pre - Inscribir</center></span></a>
-									
-									</li>
-								
-			
-									
-                                </ul>
+                            <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
+                                <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab ">
+                                    <ul class="kt-menu__nav ">
+                                        <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true">
+                                            <a href="{{ route('home')}}" style="margin-right: 50px; ">
+                                                <img alt="Logo" src="{{asset('logos/logo_transparente.png')}}" width="140px" height="70"/>
+                                            </a>
+                                        </li>
+									    <!-- Preinscripcion -->
+                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                            <a href="{{ route('inscripciones.create')}}" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
+                                                </i><span class="kt-menu__link-text"> Pre - Inscribir </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
                         <!-- end: Header Menu -->
+                  
 
                         <!-- begin:: Header Topbar -->
                         <div class="kt-header__topbar">
-                            <!--begin: User Bar -->
 
+                            <div class="kt-header__topbar-item">
+                                <div class="kt-header__topbar-wrapper">
+                                    <span class="kt-header__topbar-icon">
+                                        <i>
+                                            <a href="{{ route('inscripciones.create')}}" class="la la-edit" data-tittle="Inscripciones" data-toggle="inscribir"></a>
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!--begin: User Bar -->
                             @if (Route::has('login'))
 
                                 @if (Auth::check())

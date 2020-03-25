@@ -27,8 +27,16 @@ Route::get('preguntas/{formatopractica}/crear/formato', 'PreguntaController@crea
 Route::get('preguntas/{formatopractica}/ver', 'PreguntaController@index')->name('preguntas_index');
 
 Route::resource('preguntas_respuestas', 'PreguntaRespuestaController');
+
 Route::resource('diarios', 'DiarioController');
 
+Route::resource('grupos', 'GrupoController');
+
+Route::resource('docentes', 'DocenteController');
+
+Route::resource('colegios', 'ColegioController');
+
+Route::resource('docentes-grupos', 'DocenteGrupoController');
 });
 
 // RUTA DE PRUEBA

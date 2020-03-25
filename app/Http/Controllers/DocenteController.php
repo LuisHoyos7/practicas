@@ -3,82 +3,85 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Docente;
+use App\TipoDocente;
 
+use App\User;
 class DocenteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        $docentes = Docente::all();
+
+        return view('docentes.index', compact('docentes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        //
+        $tipo_docentes = TipoDocente::pluck('nombre', 'id');
+
+        return view('docentes.create', compact('tipo_docentes'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+         $userData = 
+        [
+            'identificacion'    => $request->identificacion,
+            'first_name'        => $request->first_name,
+            'last_name'         => $request->last_name,
+            'telefono'          => $request->celular,
+            'direccion'         => $request->direccion,
+            'email'             => $request->correo,
+            'password' => bcrypt($request->identificacion)
+        ];
+
+        $user = User::create($userData);
+
+        $user->attachRole('administrador');
+      
+
+        $docenteData = 
+        [
+            'user_id'                       => $user->id,
+            'tipoidentificacion'            => $request->tipoidentificacion,
+            'titulo'                        => $request->titulo,
+            'tipodocente_id'                => $request->tipodocente_id,
+        ];
+ 
+       
+        $docente = Docente::create($docenteData);
+
+        toastr()->success('Docente creado con exito');
+
+        return redirect()->route('docentes.index');
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
-        //
+        
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        
     }
 }

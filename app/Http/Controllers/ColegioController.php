@@ -2,44 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Grupo;
 use Illuminate\Http\Request;
-
-class GrupoController extends Controller
+use App\Colegio;
+class ColegioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        $grupos = Grupo::all();
+        $colegios = Colegio::all();
 
-        return view('grupos.index', compact('grupos'));
+        return view('colegios.index', compact('colegios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        return view('grupos.create');
+        return view('colegios.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        Grupo::create($request->all());
-        
-        return redirect()->route('grupos.index');
+      $file =   $request->file('imagen');
+
+        \Storage::disk('local')->put('demo5.jpg',  \File::get($file));
     }
 
     /**

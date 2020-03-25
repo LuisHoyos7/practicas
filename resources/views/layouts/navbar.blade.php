@@ -15,7 +15,7 @@
 
                 @if (Auth::check())
 	    <!-- Estudiantes -->
-            <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('estudiantes.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-home"></i><span class="kt-menu__link-text"> <center> Estudiantes</center></span></a>
+            <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('estudiantes.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-user"></i><span class="kt-menu__link-text"> <center> Estudiantes</center></span></a>
                     <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                         <ul class="kt-menu__subnav">
                             <li class="kt-menu__item " aria-haspopup="true"><a href="" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-user"><span></span></i><span class="kt-menu__link-text">Link 1</span></a></li> 
@@ -28,6 +28,21 @@
                 @if (Auth::check())
                 @if(auth()->user()->hasRole('administrador'))
                 <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('inscripciones.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Inscripciones</center></span></a>
+                    
+                </li>
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('docentes.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-user"></i><span class="kt-menu__link-text"> <center>Docentes</center></span></a>
+                    
+                </li>
+
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('grupos.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Grupos</center></span></a>
+                    
+                </li>
+
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('colegios.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Instituciones</center></span></a>
+                    
+                </li>
+
+                 <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('docentes-grupos.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Grupos-Docentes</center></span></a>
                     
                 </li>
                 @endif

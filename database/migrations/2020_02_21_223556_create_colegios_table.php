@@ -19,9 +19,7 @@ class CreateColegiosTable extends Migration
             $table->string('nombre_representante');
             $table->string('contacto');
             $table->string('direccion');
-            $table->string('latitud');
-            $table->string('longitud');
-            $table->string('imagen');
+
             $table->timestamps();
         });
     }

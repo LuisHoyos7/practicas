@@ -18,7 +18,7 @@
 
     <div class="row">      
         <div class="kt-portlet__body row1">
-            <table class="table table-hover" id="grupos">
+            <table class="table table-hover" id="colegios">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -37,7 +37,7 @@
                         <td>{{$colegio->direccion}}</td>                      
                         <td>
                             <div class="btn-group">
-                            <a href="#" class="btn btn-success btn-sm">
+                            <a href="{{route('colegios.edit', $colegio->id)}}" class="btn btn-success btn-sm">
                             Editar
                             </a>
 

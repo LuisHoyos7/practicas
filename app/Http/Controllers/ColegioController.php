@@ -23,9 +23,18 @@ class ColegioController extends Controller
     
     public function store(Request $request)
     {
-      $file =   $request->file('imagen');
+      
+        $file =   $request->file('imagen');
 
-        \Storage::disk('local')->put('demo5.jpg',  \File::get($file));
+        $nombre = $request->nombre_colegio.'jpg';
+
+        \Storage::disk('local')->put('hola',  \File::get($file));
+
+        $colegio = Colegio::create($request->all());
+
+        toastr()->success('institucion creada con exito');
+
+        return redirect()->route('colegios.index');
     }
 
     /**
@@ -47,7 +56,7 @@ class ColegioController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('colegios.edit');
     }
 
     /**

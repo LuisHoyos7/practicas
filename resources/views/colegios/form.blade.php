@@ -32,10 +32,7 @@
         <label>Direccion</label>
 	    <input type="text" class="form-control" name="direccion">
 	</div>
-</div><br>
-
-<div class="row row1">
-	<div class="col-md-12">
+	<div class="col-md-4">
         <label>Imagen</label>
 	    <input type="file" class="form-control" name="imagen">
 	</div>
@@ -45,7 +42,7 @@
     <div class="col-md-12">
         <center>
             <button class="submit btn btn-success btn-md" >
-                {{empty($grupo) ? 'Guardar' : 'Actualizar'}}
+                {{empty($colegio) ? 'Guardar' : 'Actualizar'}}
             </button>
         </center>
     </div>

@@ -26,9 +26,9 @@ class ColegioController extends Controller
       
         $file =   $request->file('imagen');
 
-        $nombre = $request->nombre_colegio.'jpg';
+        $nombre = $request->nombre_colegio.'.jpg';
 
-        \Storage::disk('local')->put('hola',  \File::get($file));
+        $file->move('uploads', $nombre);
 
         $colegio = Colegio::create($request->all());
 
@@ -45,7 +45,10 @@ class ColegioController extends Controller
      */
     public function show($id)
     {
-        //
+        $colegio = Colegio::find($id);
+    
+        return view('colegios.show', compact('colegio'));
+
     }
 
     /**
@@ -56,7 +59,9 @@ class ColegioController extends Controller
      */
     public function edit($id)
     {
-        return view('colegios.edit');
+        $colegio = Colegio::findOrFail($id);
+
+        return view('colegios.edit', compact('colegio'));
     }
 
     /**
@@ -68,7 +73,14 @@ class ColegioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $colegio = Colegio::findOrFail($id);
+
+        $colegio->update($request->all());
+
+        toastr()->warning('institucion modificada con exito');
+
+        return redirect()->route('colegios.index');
     }
 
     /**
@@ -77,8 +89,12 @@ class ColegioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Colegio $colegio)
     {
-        //
+        $colegio->delete();
+
+        toastr()->success('Institucion Eliminada con exito');
+
+        return redirect()->route('colegios.index');
     }
 }

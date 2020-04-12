@@ -9,28 +9,28 @@
 @if(empty($colegio))
 {!! Form::open(['route' => 'colegios.store', 'enctype' => 'multipart/form-data']) !!}
 @else
-{!! Form::model($colegio, ['route' => ['colegios.update', $gcolegio->id], 'method' => 'PUT']) !!}
+{!! Form::model($colegio, ['route' => ['colegios.update', $colegio->id], 'method' => 'PUT']) !!}
 @endif
 
 <div class="row row1">
 	<div class="col-md-6">
         <label>Nombre Colegio</label>
-	    <input type="text" class="form-control" name="nombre_colegio">
+	    <input type="text" class="form-control" name="nombre_colegio" value={{@$colegio->nombre_colegio}}"">
 	</div>
 	<div class="col-md-6">
         <label>Nombre Rector (representante)</label>
-	    <input type="text" class="form-control" name="nombre_representante">
+	    <input type="text" class="form-control" name="nombre_representante" value="{{@$colegio->nombre_representante}}">
 	</div>
 </div><br>
 
 <div class="row row1">
 	<div class="col-md-4">
         <label>Contacto</label>
-	    <input type="text" class="form-control" name="contacto">
+	    <input type="text" class="form-control" name="contacto" value="{{@$colegio->contacto}}">
 	</div>
 	<div class="col-md-4">
         <label>Direccion</label>
-	    <input type="text" class="form-control" name="direccion">
+	    <input type="text" class="form-control" name="direccion" value="{{@$colegio->direccion}}">
 	</div>
 	<div class="col-md-4">
         <label>Imagen</label>

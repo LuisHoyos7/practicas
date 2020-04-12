@@ -15,7 +15,7 @@
 <div class="row row1">
 	<div class="col-md-12">
         <label>Nombre de grupo</label>
-	    <input type="text" class="form-control" name="nombre">
+    <input type="text" class="form-control" name="nombre"  value="{{@$grupo->nombre}}">
 	</div>
 </div><br>
    

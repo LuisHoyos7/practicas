@@ -61,7 +61,9 @@ class GrupoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $grupo = Grupo::findOrFail($id);
+
+        return view('grupos.edit', compact('grupo'));
     }
 
     /**
@@ -73,7 +75,13 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $grupo = Grupo::findOrFail($id);
+
+        $grupo->update($request->all());
+
+        toastr()->warning('Grupo Acualizado con Exitos');
+
+        return redirect()->route('grupos.index');
     }
 
     /**
@@ -84,6 +92,12 @@ class GrupoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $grupo = Grupo::findOrFail($id);
+
+        $grupo->delete();
+
+        toastr()->success('Grupo Eliminado con Exito');
+
+        return redirect()->route('grupos.index');
     }
 }

@@ -36,15 +36,25 @@
                         <td>{{$colegio->contacto}}</td>   
                         <td>{{$colegio->direccion}}</td>                      
                         <td>
-                            <div class="btn-group">
-                            <a href="{{route('colegios.edit', $colegio->id)}}" class="btn btn-success btn-sm">
-                            Editar
-                            </a>
+                        
+                            {{ Form::open(['route' => ['colegios.destroy', $colegio->id], 'method' => 'delete']) }}
 
-                            <a href class="btn btn-danger btn-sm">
-                            Eliminar
-                            </a>
+                            <div class="btn-group">
+                                <a href="{{route('colegios.show', $colegio->id)}}" class="btn btn-primary btn-sm">
+                                Más
+                                </a>
+                                <a href="{{route('colegios.edit', $colegio->id)}}" class="btn btn-success btn-sm">
+                                Editar
+                                </a>
+                                {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                'type' => 'submit',
+                                'class' => 'btn btn-danger btn-sm',
+                                'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
                             </div>
+                            
+                            {{ Form::close() }}
                         </td>
                     </tr>
                     @endforeach

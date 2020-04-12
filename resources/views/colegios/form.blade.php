@@ -18,7 +18,7 @@
 	    <input type="text" class="form-control" name="nombre_colegio" value={{@$colegio->nombre_colegio}}"">
 	</div>
 	<div class="col-md-6">
-        <label>Nombre Rector (Representante Legal)</label>
+        <label>Nombre Rector (Representante Legal Insttucion)</label>
 	    <input type="text" class="form-control" name="nombre_representante" value="{{@$colegio->nombre_representante}}">
 	</div>
 </div><br>

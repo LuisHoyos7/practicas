@@ -11,8 +11,8 @@
         <table class="table table-hover" id="estudiantes">
             <thead>
                 <tr>
-                    <th>Nombre</th>
                     <th>Apellidos</th>
+                    <th>Nombres</th>
                     <th>Tipo Identificacion</th>
                     <th>Identificacion</th>
                     <th>Semestre</th>

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\Sender;
+use Mail;
 use Illuminate\Http\Request;
 use App\Inscripcion;
 use App\User;
@@ -83,9 +84,13 @@ class InscripcionController extends Controller
        
         $estudiante = Estudiante::create($estudianteData);
 
-       // $m= new SendMailController();
+       Mail::send('emails.invitacion', $userData, function ($message) use ($user){
 
-       // $m->sendMail($user->email,'INSCRIPCION SATISFACTORIA');
+    $message->subject('Invitacion Practicas Pedagogicas');
+
+    $message->to($user->email);
+
+});
 
         $inscripcion->inscrito=true;
 

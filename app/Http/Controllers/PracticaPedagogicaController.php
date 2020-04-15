@@ -14,7 +14,14 @@ class PracticaPedagogicaController extends Controller
 
     public function index(Estudiante $estudiante)
     {
+       if(auth()->user()->hasRole('administrador'))
+       {
        
+        $practica_pedagogicas = PracticaPedagogica::all();
+        
+        return view ('practicas.index',compact('practica_pedagogicas'));
+    
+       }else
         $practica_pedagogicas = auth()->user()->estudiante->practicasPedagogicas;
        
         return view('practicas.index', compact('practica_pedagogicas'));

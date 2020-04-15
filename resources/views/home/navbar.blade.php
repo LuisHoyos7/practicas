@@ -145,6 +145,26 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </i><span class="kt-menu__link-text"> Pre - Inscribir </span>
                                             </a>
                                         </li>
+                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                            <a href="#services" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
+                                                </i><span class="kt-menu__link-text">Servicios </span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                            <a href="#nosotros" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
+                                                </i><span class="kt-menu__link-text">Nosotros</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                            <a href="#galeria" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
+                                                </i><span class="kt-menu__link-text">Galeria</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                            <a href="#contactos" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
+                                                </i><span class="kt-menu__link-text">Contacto</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -158,7 +178,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="kt-header__topbar-wrapper">
                                     <span class="kt-header__topbar-icon">
                                         <i>
-                                            <a href="{{ route('inscripciones.create')}}" class="la la-edit" data-tittle="Inscripciones" data-toggle="inscribir"></a>
+                                            <a style="color:black !important" href="{{ route('inscripciones.create')}}" class="la la-edit" data-tittle="Inscripciones" data-toggle="inscribir"></a>
                                         </i>
                                     </span>
                                 </div>
@@ -171,7 +191,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <div class="kt-header__topbar-wrapper">
                                             <span class="kt-header__topbar-icon">
                                                 <i>
-                                                    <a href="{{ url('/index') }}" class="fa fa-home"></a>
+                                                    <a style="color:black !important" href="{{ url('/index') }}" class="fa fa-home"></a>
                                                 </i>
                                             </span>
                                         </div>
@@ -226,7 +246,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <div class="kt-header__topbar-wrapper">
                                             <span class="kt-header__topbar-icon">
                                                 <i>
-                                                    <a href="{{ url('/login') }}" class="la la-key"></a>
+                                                    <a style="color:green !important" href="{{ url('/login') }}" class="">Entrar</a>
                                                 </i>
                                             </span>
                                         </div>
@@ -245,7 +265,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                         <!--Begin::Dashboard 3-->
                         <!--Begin::Row-->
-                        <div class="row">
+                        <div class="row uno">
                             @yield('contentInicio')
                         </div>
                         <!--End::Row-->

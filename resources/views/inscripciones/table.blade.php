@@ -8,7 +8,7 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
-                    <a href="" class="btn btn-brand btn-elevate btn-pill btn-elevate-air">
+                    <a href="" class="btn btn-success">
                         <i class="la la-plus"></i>
                         Nuevo
                     </a>
@@ -18,7 +18,7 @@
     </div>
 <div class="row">      
     <div class="kt-portlet__body row1">
-        <table class="table table-hover" id="predio">
+        <table class="table table-hover" id="inscripciones">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -60,7 +60,6 @@
                 @endforeach
             </tbody>
         </table> <br><br>
-        {{$inscripciones->links()}}
     </div>
 </div>
 </div>

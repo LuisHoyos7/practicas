@@ -17,6 +17,7 @@ class CreateDocentesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tipodocente_id');
             $table->string('titulo');
+            $table->string('nombres');
             $table->foreign('tipodocente_id')->references('id')->on('tipo_docentes');
             $table->timestamps();
         });

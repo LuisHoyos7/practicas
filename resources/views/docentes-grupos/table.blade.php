@@ -30,9 +30,10 @@
                 <tbody>
                     @foreach ($docente_grupos as $docente_grupo )
                     <tr>
-                        <td>{{$docente_grupo->docente_id}}</td>
-                        <td>{{$docente_grupo->grupo_id}}</td>   
-                        <td>{{$docente_grupo->Fecha}}</td>                 
+                        
+                        <td>{{$docente_grupo->grupo->nombre}}</td>
+                        <td>{{$docente_grupo->docente->nombres}}</td>   
+                        <td>{{$docente_grupo->fecha}}</td>                 
                         <td>
                             <div class="btn-group">
                             <a href="#" class="btn btn-success btn-sm">

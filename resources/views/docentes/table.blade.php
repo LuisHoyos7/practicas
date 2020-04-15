@@ -38,7 +38,7 @@
                         <td>{{$docente->tipoidentificacion}}</td>
                         <td>{{$docente->Usuario->identificacion}}</td>
                         <td>{{$docente->titulo}} </td>
-                        <td>{{$docente->tipodocente_id}}</td>
+                        <td>{{$docente->tipoDocente->nombre}}</td>
                         <td>
                             <div class="btn-group">
                                 <a type="button" href="" class="btn btn-success btn-sm">

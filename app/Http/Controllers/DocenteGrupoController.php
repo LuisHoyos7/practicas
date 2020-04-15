@@ -21,37 +21,20 @@ class DocenteGrupoController extends Controller
    
     public function create()
     {
-        $docentes = Docente::all();
- 
-        $arr = array();
-
-        foreach($docentes as $docente)
-        { 
-          
-            $data = User::where('id', $docente->user_id)->pluck('first_name','id');
-
-            foreach($data as $d)
-            {
-                $data2 = $d;
-
-                array_push($arr, $data2);
-            }
-
-        }
-      
+        $docentes = Docente::pluck('nombres', 'id');
 
         $grupos = Grupo::pluck('nombre', 'id');
 
-    
-
-        return view('docentes-grupos.create', compact('arr', 'grupos'));
+        return view('docentes-grupos.create', compact('docentes', 'grupos'));
 
     }
 
    
     public function store(Request $request)
     {
-       
+       DocenteGrupo::create($request->all());
+
+       return redirect()->route('docentes-grupos.index');
     }
 
    

@@ -13,7 +13,8 @@ class Docente extends Model
     'user_id',
     'tipoidentificacion',
     'titulo',
-    'tipodocente_id'
+    'tipodocente_id',
+    'nombres'
 
      ];
 
@@ -21,4 +22,9 @@ class Docente extends Model
      {
          return $this->belongsTo(User::class, 'user_id');
      }
+
+    public function tipoDocente()
+    {
+        return $this->belongsTo('App\TipoDocente', 'tipodocente_id');
+    }
 }

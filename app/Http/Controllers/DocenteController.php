@@ -50,9 +50,9 @@ class DocenteController extends Controller
             'tipoidentificacion'            => $request->tipoidentificacion,
             'titulo'                        => $request->titulo,
             'tipodocente_id'                => $request->tipodocente_id,
+            'nombres'                       => $request->first_name.' '.$request->last_name
         ];
- 
-       
+      
         $docente = Docente::create($docenteData);
 
         toastr()->success('Docente creado con exito');

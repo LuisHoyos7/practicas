@@ -40,23 +40,41 @@ class DocenteGrupoController extends Controller
    
     public function show($id)
     {
+     
         
     }
 
     public function edit($id)
+
     {
-        
+        $docentes = Docente::pluck('nombres', 'id');
+
+        $grupos = Grupo::pluck('nombre', 'id');
+
+        $docente_grupo = DocenteGrupo::findOrFail($id);
+
+        return view('docentes-grupos.edit',compact('docente_grupo', 'docentes', 'grupos'));
+
     }
 
   
     public function update(Request $request, $id)
     {
-        
+        $docentes_grupos = DocenteGrupo::findOrFail($id);
+
+        $docentes_grupos->update($request->all());
+
+        return redirect()->route('docentes-grupos.index');
     }
 
    
     public function destroy($id)
     {
-        
+        $docentegrupo = DocenteGrupo::findOrFail($id);
+    
+        $docentegrupo->delete();
+
+        return redirect()->route('docentes-grupos.index');
+
     }
 }

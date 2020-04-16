@@ -18,7 +18,7 @@
         <div class="form-group">
             <label for="semestre">Docente</label>
             <div class="kt-input-icon">
-                {{Form::select('docente_id', $docentes  , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
+                {{Form::select('docente_id', @$docentes  , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="
                     flaticon-map" style="margin-right:30px"></i></span></span>
             </div>    
@@ -29,7 +29,7 @@
         <div class="form-group">
             <label for="semestre">Grupos</label>
             <div class="kt-input-icon">
-                {{Form::select('grupo_id', $grupos , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
+                {{Form::select('grupo_id', @$grupos , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="
                     flaticon-map" style="margin-right:30px"></i></span></span>
             </div>    

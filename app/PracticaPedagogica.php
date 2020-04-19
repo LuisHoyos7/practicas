@@ -15,6 +15,8 @@ class PracticaPedagogica extends Model
     'semestre_id',
     'practica_id',
     'estudiante_id',
+    'docente_id',
+    'colegio_id',
     
      ];
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Estudiante;
 use App\Semestre;
 use App\Practica;
+use App\Docente;
+use App\Colegio;
 use App\PracticaPedagogica;
 
 class PracticaPedagogicaController extends Controller
@@ -35,13 +37,17 @@ class PracticaPedagogicaController extends Controller
 
         $practicas = Practica::pluck('nombre','id');
 
-        return view('practicas.create',compact('semestres','practicas','estudiante'));
+        $docentes = Docente::pluck('nombres', 'id'); 
+
+        $instituciones = Colegio::pluck('nombre_colegio', 'id'); 
+
+        return view('practicas.create',compact('semestres','practicas','estudiante','docentes','instituciones'));
     }
 
  
     public function store(Request $request)
     {
-        
+      
         PracticaPedagogica::create($request->all());
 
         toastr()->success('practica registrada con exito');

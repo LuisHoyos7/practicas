@@ -120,10 +120,11 @@ padding-left: 30px !important;
             <div class="kt-portlet__body">
 
                 <div class="primary phone:tw-pt-0 tw-text-white">
-                    <h1 class="tw-text-white tw-text-3xl tw-mb-4"><br><br><br><br>
-                        Programa de Licenciatura en Ciencias Naturales 
-Sistema de Practicas Pedagógicas Institucionales Modalidad Presencial
-                    </h1>
+                    <h2 class="tw-text-white tw-text-3xl tw-mb-4"><br><br><br><br><br>
+                        <p>Programa de Licenciatura en Ciencias Naturales</p>  
+                        <p>Sistema de Prácticas Pedagógicas Institucionales</p> 
+                        <p>Modalidad Presencial</p>
+                    </h2>
                 </div>
 
             </div>

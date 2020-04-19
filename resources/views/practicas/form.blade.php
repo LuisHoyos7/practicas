@@ -14,7 +14,7 @@
 {{method_field('POST')}}
 
 <div class="row row1">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="semestre">seleccione el semestre</label>
             <div class="kt-input-icon">
@@ -24,7 +24,7 @@
             </div>    
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="practica">seleccione la practica </label>
             <div class="kt-input-icon">
@@ -34,15 +34,26 @@
         </div>
     </div> 
 
-    <div class="col-md-4">
-        <div class="form-group date">
-            <label for="estudiante_id">Estudiante</label>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="practica">seleccione el docente</label>
             <div class="kt-input-icon">
-                <input  type="text" class="form-control" readonly value="{{$estudiante->Usuario->first_name}} {{$estudiante->Usuario->last_name}}" > 
-                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-user"></i></span></span>
-            </div>
+                {{Form::select('docente_id', $docentes , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
+                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-university" style="margin-right:30px"></i></span></span>
+            </div>    
         </div>
-    </div>
+    </div> 
+
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="practica">seleccione la institucion </label>
+            <div class="kt-input-icon">
+                {{Form::select('colegio_id', $instituciones , null, ['class' => 'form-control kt-selectpicker', 'placeholder' => 'seleccione.'])}}
+                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-university" style="margin-right:30px"></i></span></span>
+            </div>    
+        </div>
+    </div> 
+
 
     <input style="display:none" name="estudiante_id" type="text" class="form-control" readonly value="{{$estudiante->id}}">
 

@@ -106,7 +106,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="kt-grid__item kt-grid__item--fluid kt-grid__item--center kt-grid kt-grid--ver kt-login__content" style="background: linear-gradient(180deg,#21c8f6,#395177)">
 						<div class="kt-login__section">
 							<div class="kt-login__block">
-								<center><h3 class="kt-login__title"><p>Sistema de Practicas pedagogicas</p></h3></center>
+								<center><h3 class="kt-login__title"><p>Sistema de Prácticas Pedagógicas Institucionales</p></h3></center>
 								<br>
 								<div class="kt-login__desc">
 									<center><img src="{{asset('logos/logo_transparente.png')}}" width="150"></center>

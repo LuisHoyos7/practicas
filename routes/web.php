@@ -37,6 +37,8 @@ Route::resource('docentes', 'DocenteController');
 Route::resource('colegios', 'ColegioController');
 
 Route::resource('docentes-grupos', 'DocenteGrupoController');
+
+Route::resource('inicio', 'InicioController');
 });
 
 // RUTA DE PRUEBA

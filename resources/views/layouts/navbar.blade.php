@@ -115,10 +115,10 @@
                         </div>
                         <div class="kt-notification__item-details">
                             <div class="kt-notification__item-title kt-font-bold">
-                                Mi Perfil
+                                {{auth()->user()->first_name}}
                             </div>
                             <div class="kt-notification__item-time">
-                                Configuracion de cuenta y más
+                                Rol Administrador
                             </div>
                         </div>
                     </a>

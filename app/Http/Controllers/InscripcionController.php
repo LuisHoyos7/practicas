@@ -19,7 +19,7 @@ class InscripcionController extends Controller
    
     public function index()
     {
-        $inscripciones = Inscripcion::paginate(5);
+        $inscripciones = Inscripcion::all();
 
         return view ('inscripciones.index', compact('inscripciones'));
     }

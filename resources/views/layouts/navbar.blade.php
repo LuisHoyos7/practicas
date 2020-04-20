@@ -26,26 +26,31 @@
 
 
                 @if (Auth::check())
-                @if(auth()->user()->hasRole('administrador'))
-                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('inscripciones.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Inscripciones</center></span></a>
+                @if(auth()->user()->hasRole('administrador')  )
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('docentes-grupos.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Grupos-Docentes</center></span></a>
                     
                 </li>
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('inscripciones.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Inscripciones</center></span></a>
+                @endif
+                </li>
+                @if(auth()->user()->hasRole('administrador') || auth()->user()->hasRole('estudiante') )
                 <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('docentes.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-user"></i><span class="kt-menu__link-text"> <center>Docentes</center></span></a>
                     
                 </li>
+                @endif
 
+                @if(auth()->user()->hasRole('administrador') || auth()->user()->hasRole('estudiante') )
                 <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('grupos.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Grupos</center></span></a>
-                    
-                </li>
-
-                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('colegios.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Instituciones</center></span></a>
-                    
-                </li>
-
-                 <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('docentes-grupos.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Grupos-Docentes</center></span></a>
-                    
                 </li>
                 @endif
+
+                @if(auth()->user()->hasRole('administrador') || auth()->user()->hasRole('estudiante') )
+
+                <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('colegios.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file"></i><span class="kt-menu__link-text"> <center>Instituciones</center></span></a>  
+                </li>
+                @endif
+
+          
                 @endif
                 <!-- ADMINISTRACIÓN -->
                 @if (Auth::check())

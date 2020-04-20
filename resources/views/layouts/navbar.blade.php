@@ -123,7 +123,7 @@
                                 {{auth()->user()->first_name}}
                             </div>
                             <div class="kt-notification__item-time">
-                                Rol Administrador
+                                Rol Estudiante
                             </div>
                         </div>
                     </a>

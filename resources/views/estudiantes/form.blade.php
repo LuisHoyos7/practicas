@@ -12,46 +12,53 @@
 {!! Form::model($estudiante, ['route' => ['estudiantes.update', $estudiante->id], 'method' => 'PUT']) !!}
 @endif
 
-<input type="text" name="estudiante_id" value="{{$estudiante->id}}">
+<input hidden type="text" name="estudiante_id" value="{{$estudiante->id}}">
+
+
+@if(!empty($docente))
+<input hidden name="user_id" value="{{$usuario->id}}">
+@endif
+
 <div class="row row1">
     <div class="col-md-4">
         <label>
             Nombre
         </label>
-        <input type="text" class="form-control" name="first_name" value="{{auth()->user()->first_name}}">
+        <input type="text" class="form-control" name="first_name" value="{{@$usuario->first_name}}">
     </div>
     <div class="col-md-4">
         <label>
             Apellidos
         </label>
-        <input type="text" class="form-control" name="last_name" value="{{auth()->user()->last_name}}">
+        <input type="text" class="form-control" name="last_name" value="{{@$usuario->last_name}}">
     </div>
     <div class="col-md-4">
         <label>
             Identificacion
         </label>
-        <input type="text" class="form-control"  name="identificacion" value="{{auth()->user()->identificacion}}">
+        <input type="text" class="form-control"  name="identificacion" value="{{@$usuario->identificacion}}">
     </div>
 </div>
 
 <div class="row row1">
-    <div class="col-md-3">
+
+     <div class="col-md-3">
         <label for="tipoidentificacion">Tipo Identificacion</label>
             <div class="kt-input-icon">
-                <select name="tipoidentificacion" class="form-control" value="{{@$estudiante->tipoidentificacion}}">
+                <select name="tipoidentificacion" class="form-control" value="">
                     <option value="CEDULA DE CIUDADANIA" selected>CEDULA DE CIUDADANIA</option> 
                     <option value="TARJETA DE IDENTIDAD" >TARJETA DE IDENTIDAD</option>
                     <option value="CEDULA DE EXTRANJERIA">CEDULA DE EXTRANJERIA</option>
                   </select>
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-profile" style="margin-right:30px"></i></span></span>
             </div>    
-    </div>
+        </div>
     
     <div class="col-md-2">
         <div class="form-group">
             <label for="celular">Celular</label>
             <div class="kt-input-icon">
-                <input name="celular" type="text" class="form-control" placeholder="celular" value="{{auth()->user()->telefono}}">
+                <input name="celular" type="text" class="form-control" placeholder="celular" value="{{@$usuario->telefono}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-phone"></i></span></span>
             </div>    
         </div>
@@ -61,7 +68,7 @@
         <div class="form-group">
             <label for="direccion">direccion</label>
             <div class="kt-input-icon">
-                <input name="direccion" type="text" class="form-control" placeholder="direccion" value="{{auth()->user()->direccion}}">
+                <input name="direccion" type="text" class="form-control" placeholder="direccion" value="{{@$usuario->direccion}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-placeholder-2"></i></span></span>
             </div>    
         </div>
@@ -71,7 +78,7 @@
         <div class="form-group">
             <label for="correo">correo</label>
             <div class="kt-input-icon">
-                <input required name="correo" type="text" class="form-control" placeholder="correo" value="{{auth()->user()->email}}">
+                <input required name="correo" type="text" class="form-control" placeholder="correo" value="{{@$usuario->email}}">
                 @if ($errors->has('correo'))
 					<span class="text-danger">{{ $errors->first('correo') }}</span>
 				@endif  

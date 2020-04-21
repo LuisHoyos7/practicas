@@ -14,7 +14,7 @@ class EstudianteController extends Controller
     {
        if(auth()->user()->hasRole('administrador'))
        {
-       
+        
         $estudiantes = Estudiante::all();
         return view ('estudiantes.index',compact('estudiantes'));
     
@@ -30,7 +30,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -63,7 +63,11 @@ class EstudianteController extends Controller
      */
     public function edit(Estudiante $estudiante)
     {
-        return view('estudiantes.edit', compact ('estudiante'));
+        $estudiante = Estudiante::find($estudiante->id); 
+
+        $usuario = User::find($estudiante->user_id);
+
+        return view('estudiantes.edit', compact ('estudiante', 'usuario'));
     }
 
     /**
@@ -116,8 +120,17 @@ class EstudianteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Estudiante $estudiante) 
     {
-        //
+        $estudiante->delete();
+
+        $user = User::find($estudiante->user_id);
+
+        $user->delete();
+
+        toastr()->warning('estudiante Eliminado con exito');
+
+        return redirect()->route('estudiantes.index');
+
     }
 }

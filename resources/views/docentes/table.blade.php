@@ -40,14 +40,24 @@
                         <td>{{$docente->titulo}} </td>
                         <td>{{$docente->tipoDocente->nombre}}</td>
                         <td>
+                         
+                            {{ Form::open(['route' => ['docentes.destroy', $docente->id], 'method' => 'delete']) }}
+
                             <div class="btn-group">
-                                <a type="button" href="" class="btn btn-success btn-sm">
+                                <a href="{{route('docentes.edit', $docente->id)}}" type="button" href="" class="btn btn-success btn-sm">
                                 Editar
                                 </a>
-                                <a type="button" href="" class="btn btn-danger btn-sm">
-                                Eliminar
-                                </a>
+    
+                                {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+                           
                             </div>
+                            {{ Form::close() }}
+        
                         </td>
                     </tr>
                 @endforeach

@@ -12,24 +12,28 @@
 {!! Form::model($docente, ['route' => ['docentes.update', $docente->id], 'method' => 'PUT']) !!}
 @endif
 
+@if(!empty($docente))
+<input hidden name="user_id" value="{{$usuario->id}}">
+@endif
+
 <div class="row row1">
     <div class="col-md-4">
         <label>
             Nombre
         </label>
-        <input type="text" class="form-control" name="first_name" value="">
+        <input type="text" class="form-control" name="first_name" value="{{@$usuario->first_name}}">
     </div>
     <div class="col-md-4">
         <label>
             Apellidos
         </label>
-        <input type="text" class="form-control" name="last_name" value="">
+        <input type="text" class="form-control" name="last_name" value="{{@$usuario->last_name}}">
     </div>
     <div class="col-md-4">
         <label>
             Identificacion
         </label>
-        <input type="text" class="form-control"  name="identificacion" value="">
+        <input type="text" class="form-control"  name="identificacion" value="{{@$usuario->identificacion}}">
     </div>
 </div>
 
@@ -50,7 +54,7 @@
         <div class="form-group">
             <label for="celular">Celular</label>
             <div class="kt-input-icon">
-                <input name="celular" type="text" class="form-control" placeholder="celular" value="">
+                <input name="celular" type="text" class="form-control" placeholder="celular" value="{{@$usuario->telefono}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="la la-phone"></i></span></span>
             </div>    
         </div>
@@ -60,7 +64,7 @@
         <div class="form-group">
             <label for="direccion">direccion</label>
             <div class="kt-input-icon">
-                <input name="direccion" type="text" class="form-control" placeholder="direccion" value="">
+                <input name="direccion" type="text" class="form-control" placeholder="direccion" value="{{@$usuario->direccion}}">
                 <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i class="flaticon-placeholder-2"></i></span></span>
             </div>    
         </div>
@@ -73,7 +77,7 @@
         <div class="form-group">
             <label for="correo">correo</label>
             <div class="kt-input-icon">
-                <input required name="correo" type="text" class="form-control" placeholder="correo" value="">
+                <input required name="correo" type="text" class="form-control" placeholder="correo" value="{{@$usuario->email}}">
                 @if ($errors->has('correo'))
 					<span class="text-danger">{{ $errors->first('correo') }}</span>
 				@endif  
@@ -87,7 +91,7 @@
         <div class="form-group">
             <label for="correo">Ultimo Titulo Obtenido</label>
             <div class="kt-input-icon">
-                <input required name="titulo" type="text" class="form-control" placeholder="Escriba" value="">
+                <input required name="titulo" type="text" class="form-control" placeholder="Escriba" value="{{@$docente->titulo}}">
             </div>    
         </div>
     </div>

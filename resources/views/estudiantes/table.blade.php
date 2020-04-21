@@ -14,7 +14,7 @@
                     <th>Apellidos</th>
                     <th>Nombres</th>
                     <th>Tipo Identificacion</th>
-                    <th>Identificacion</th>
+                    <th>Identificacion</th> 
                     <th>Semestre</th>
                     <th>Practica</th>
                     <th>sede</th>
@@ -32,14 +32,27 @@
                         <td>{{$estudiante->practica}}</td>
                         <td>{{$estudiante->sede}}</td>
                         <td>
+                        
+                            {{ Form::open(['route' => ['estudiantes.destroy', $estudiante->id], 'method' => 'delete']) }}
+
                             <div class="btn-group">
+                                @if(auth()->user()->hasRole('estudiante') || auth()->user()->hasRole('docente') )
                                 <a type="button" href="{{ route('practicas.index', $estudiante->id) }}" class="btn btn-success btn-sm">
                                     Practicas
                                 </a>
-                                <a type="button" href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-danger btn-sm">
+                                @endif
+                                <a type="button" href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-info btn-sm">
                                      Editar
                                 </a>
+                                {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+                           
                             </div>
+                            {{ Form::close() }}
                         </td>
                     </tr>
                 @endforeach

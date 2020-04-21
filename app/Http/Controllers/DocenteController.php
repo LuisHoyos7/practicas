@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use Illuminate\Http\Request;
 use App\Docente;
 use App\TipoDocente;
-
 use App\User;
 class DocenteController extends Controller
 {
@@ -41,7 +40,7 @@ class DocenteController extends Controller
 
         $user = User::create($userData);
 
-        $user->attachRole('administrador');
+        $user->attachRole('docente');
       
 
         $docenteData = 
@@ -70,18 +69,64 @@ class DocenteController extends Controller
     
     public function edit($id)
     {
-        
+        $docente = Docente::find($id); 
+
+        $usuario = User::find($docente->user_id);
+
+        $tipo_docentes = TipoDocente::pluck('nombre', 'id');
+
+        return view('docentes.edit', compact('docente', 'tipo_docentes', 'usuario'));
     }
 
-    
     public function update(Request $request, $id)
     {
+
+         $userData = 
+        [
+            'identificacion'    => $request->identificacion,
+            'first_name'        => $request->first_name,
+            'last_name'         => $request->last_name,
+            'telefono'          => $request->celular,
+            'direccion'         => $request->direccion,
+            'email'             => $request->correo,
+            'password' => bcrypt($request->identificacion)
+        ];
+        $user = User::find($request->user_id);
+
+        $user->update($userData);
+      
+        $docenteData = 
+        [
+            'user_id'                       => $user->id,
+            'tipoidentificacion'            => $request->tipoidentificacion,
+            'titulo'                        => $request->titulo,
+            'tipodocente_id'                => $request->tipodocente_id,
+            'nombres'                       => $request->first_name.' '.$request->last_name
+        ];
+      
+        $docente = Docente::find($id);
+
+        $docente->update($docenteData);
+
+        toastr()->success('Docente actualizado con exito');
+
+        return redirect()->route('docentes.index');
         
     }
 
     
-    public function destroy($id)
+    public function destroy(Docente $docente)
     {
-        
+    
+        $docente->delete();
+
+        $user = User::find($docente->user_id);
+
+        $user->delete();
+
+        toastr()->warning('Docente Eliminado con exito con exito');
+
+        return redirect()->route('docentes.index');
+
     }
 }

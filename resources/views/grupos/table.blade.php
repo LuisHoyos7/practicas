@@ -8,9 +8,11 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
+                    @if(auth()->user()->hasRole('administrador'))
                     <a href="{{route('grupos.create')}}" class="btn btn-success">
                         Agregar Grupo
                     </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -32,6 +34,7 @@
                         <td>{{$grupo->nombre}}</td>
                         <td>{{$grupo->created_at}}</td>                    
                         <td>
+                            @if(auth()->user()->hasRole('administrador'))
                             {{ Form::open(['route' => ['grupos.destroy', $grupo->id], 'method' => 'delete']) }}
 
                             <div class="btn-group">
@@ -47,6 +50,7 @@
                            
                             </div>
                             {{ Form::close() }}
+                            @endif
                         </td>
                     </tr>
                     @endforeach

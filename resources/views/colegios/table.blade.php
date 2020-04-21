@@ -8,9 +8,11 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
+                @if(auth()->user()->hasRole('administrador'))
                     <a href="{{route('colegios.create')}}" class="btn btn-success">
                         Agregar Colegio
                     </a>
+                @endif
                 </div>
             </div>
         </div>
@@ -43,6 +45,7 @@
                                 <a href="{{route('colegios.show', $colegio->id)}}" class="btn btn-primary btn-sm">
                                 Más
                                 </a>
+                             @if(auth()->user()->hasRole('administrador'))
                                 <a href="{{route('colegios.edit', $colegio->id)}}" class="btn btn-success btn-sm">
                                 Editar
                                 </a>
@@ -55,6 +58,7 @@
                             </div>
                             
                             {{ Form::close() }}
+                            @endif
                         </td>
                     </tr>
                     @endforeach

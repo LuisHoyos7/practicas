@@ -53,27 +53,6 @@
           
                 @endif
                 <!-- ADMINISTRACIÓN -->
-                @if (Auth::check())
-                    @if(auth()->user()->hasRole('administrador'))
-                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                            <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-                                <i class="kt-menu__link-icon flaticon-security"></i>
-                                <span class="kt-menu__link-text"> <center>  Administración </center></span>
-                            </a>
-                            <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-                                <ul class="kt-menu__subnav">
-                                    <li class="kt-menu__item " aria-haspopup="true">
-                                        <a href="{{ route('users.index')}}" class="kt-menu__link ">
-                                            <i class="kt-menu__link-icon flaticon-users-1"><span></span>
-                                            </i>
-                                            <span class="kt-menu__link-text"> Funcionarios </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    @endif
-                @endif
             </ul>
         </div>
     </div>
@@ -123,7 +102,7 @@
                                 {{auth()->user()->first_name}}
                             </div>
                             <div class="kt-notification__item-time">
-                                Rol Estudiante
+                                Rol Docente
                             </div>
                         </div>
                     </a>

@@ -12,6 +12,10 @@ return [
             'estudiantes' => 'c,r,u,d', 
             
         ],
+        'docente' => [
+            'estudiantes' => 'c,r,u,d', 
+            
+        ],
     ],
     'permissions_map' => [
         'c' => 'create',

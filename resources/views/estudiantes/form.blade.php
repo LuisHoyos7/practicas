@@ -1,7 +1,7 @@
 <div class="kt-portlet__head">
     <div class="kt-portlet__head-label">
         <h3 class="kt-portlet__head-title">
-           Registrar Informacion al Diario de Campo
+          Informacion de Estudiante
         </h3>
     </div>
 </div>

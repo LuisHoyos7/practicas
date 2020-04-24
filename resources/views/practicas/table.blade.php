@@ -10,13 +10,12 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
-                    @if(!empty($validar_practicas))
+                  
                      
                             <a href="{{route('practicas.create')}}" class="btn btn-success">
                                 Crear Nueva
                             </a>
-                      
-                    @endif
+            
                 </div>
             </div>
         </div>

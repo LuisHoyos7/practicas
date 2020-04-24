@@ -93,7 +93,7 @@
                 </div>
 
                 <!--end: Head -->
-
+ @if (Auth::check())
                 <!--begin: Navigation -->
                 <div class="kt-notification">
                     <a href="{{ route('users.show',1) }}" class="kt-notification__item">
@@ -105,7 +105,7 @@
                                 {{auth()->user()->first_name}}
                             </div>
                             <div class="kt-notification__item-time">
-                                Rol Docente
+                                
                             </div>
                         </div>
                     </a>
@@ -124,6 +124,7 @@
 
                     </div>
                 </div>
+                @endif
 
                 <!--end: Navigation -->
             </div>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Estudiante;
 use App\Semestre;
 use App\Practica;
-use App\Docente;
+use App\Docente; 
 use App\Colegio;
 use App\PracticaPedagogica;
 
@@ -24,9 +24,11 @@ class PracticaPedagogicaController extends Controller
         return view ('practicas.index',compact('practica_pedagogicas'));
     
        }else
+       $validar_practica = auth()->user()->estudiante->practicasPedagogicas->where('finalizada', false);
+      
         $practica_pedagogicas = auth()->user()->estudiante->practicasPedagogicas;
        
-        return view('practicas.index', compact('practica_pedagogicas'));
+        return view('practicas.index', compact('practica_pedagogicas', 'validar_practica'));
     }
 
     public function create()

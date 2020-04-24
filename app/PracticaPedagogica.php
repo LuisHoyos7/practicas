@@ -30,9 +30,25 @@ class PracticaPedagogica extends Model
         return $this->belongsTo('App\Semestre');
     }
 
+    public function estudiante()
+    {
+        return $this->belongsTo('App\Estudiante');
+    }
+
     public function formatos()
     {
         return $this->hasMany('App\FormatoPractica', 'practicapedagogica_id');
     }
+
+    public function diarios()
+    {
+        return $this->hasMany('App\Diario', 'practica_pedagogicas_id');
+    }
+
+    public function productos()
+    {
+        return $this->hasMany('App\Producto', 'practica_pedagogicas_id');
+    }
+
 
 }

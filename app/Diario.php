@@ -13,7 +13,7 @@ class Diario extends Model
     'item',
     'analisis',
     'fecha',
-    'practica_id'
+    'practica_pedagogicas_id'
 
      ];
 

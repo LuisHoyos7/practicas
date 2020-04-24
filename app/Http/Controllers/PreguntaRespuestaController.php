@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PreguntaRespuesta;
 use App\FormatoPractica;
+use App\EncabezadoFormato;
 
 class PreguntaRespuestaController extends Controller
 {
@@ -22,8 +23,9 @@ class PreguntaRespuestaController extends Controller
     
     public function store(Request $request)
     {
-      
         
+       $encabezado_formatos = EncabezadoFormato::create($request->all());
+
         foreach($request->opcionpregunta_id as $pregunta=>$respuesta)
         {
             $estudiante_id = auth()->user()->estudiante->id;
@@ -34,6 +36,7 @@ class PreguntaRespuestaController extends Controller
                 'pregunta_id'           => $pregunta,
                 'opcionpregunta_id'     => $respuesta['respuesta'],
                 'estudiante_id'         => $estudiante_id,
+                'formato_id'            => $request->formato_id,
                 'descripcion'           => @$respuesta['descripcion']
             ];
 
@@ -54,13 +57,13 @@ class PreguntaRespuestaController extends Controller
            
         }
 
-        $formato = FormatoPractica::find($request->formato_id);
-
-        $formato->update(['diligenciado' => 'true']);
-
         toastr()->success('formato diligenciado con exito');
 
-        return redirect()->route('formatos_index',$request->formato_id);
+        if($request->formato_id == 1 || $request->formato_id == 2 )
+        {
+        return redirect()->route('formatos_index',1);
+        }
+  
     }
 
     

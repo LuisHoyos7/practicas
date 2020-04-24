@@ -18,9 +18,13 @@ class CreatePreguntaRespuestasTable extends Migration
             $table->unsignedBigInteger('pregunta_id');
             $table->unsignedBigInteger('opcionpregunta_id');
             $table->unsignedBigInteger('estudiante_id');
+            $table->unsignedBigInteger('formato_id');
+            $table->string('descripcion')->nullable();
+            $table->string('observaciones')->nullable();
             $table->foreign('opcionpregunta_id')->references('id')->on('opcion_preguntas');
             $table->foreign('pregunta_id')->references('id')->on('preguntas');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes');
+            $table->foreign('formato_id')->references('id')->on('formatos');
             $table->timestamps();
         });
     }

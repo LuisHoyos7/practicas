@@ -10,9 +10,13 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
-                    <a href="{{route('practicas.create')}}" class="btn btn-success">
-                        Crear Nueva
-                    </a>
+                    @if(!empty($validar_practicas))
+                     
+                            <a href="{{route('practicas.create')}}" class="btn btn-success">
+                                Crear Nueva
+                            </a>
+                      
+                    @endif
                 </div>
             </div>
         </div>
@@ -44,11 +48,11 @@
                                 <a type="button" href="{{route('formatos_index',$practica_pedagogica->practica->id)}}" class="btn btn-success btn-sm">
                                     Instrumentos
                                 </a>
-                                <a type="button" href="{{route('diarios.index',['idPractica'=>$practica_pedagogica->practica->id])}}" class="btn btn-danger btn-sm">
+                                <a type="button" href="{{route('diarios.index',['idPracticaPedagogica' => $practica_pedagogica->id])}}" class="btn btn-danger btn-sm">
                                     Diarios
                                </a>
 
-                               <a type="button" href="" class="btn btn-info btn-sm">
+                               <a type="button" href="{{route('productos.index',['idPracticaPedagogica' => $practica_pedagogica->id])}}" class="btn btn-info btn-sm">
                                     Producto
                                </a>
                             </div>

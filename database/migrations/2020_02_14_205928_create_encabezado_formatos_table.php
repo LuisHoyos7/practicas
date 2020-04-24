@@ -15,6 +15,17 @@ class CreateEncabezadoFormatosTable extends Migration
     {
         Schema::create('encabezado_formatos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('estudiante_id');
+            $table->unsignedBigInteger('formato_id');
+            $table->string('nombre')->nullable();
+            $table->string('contexto')->nullable();
+            $table->string('ubicacion')->nullable();
+            $table->string('barrio')->nullable();
+            $table->string('tiempoobservacion')->nullable();
+            $table->string('institucion')->nullable();
+            $table->date('fecha');
+            $table->foreign('estudiante_id')->references('id')->on('estudiantes');
+            $table->foreign('formato_id')->references('id')->on('formatos');
             $table->timestamps();
         });
     }

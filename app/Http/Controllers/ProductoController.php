@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Practica; 
-use App\Diario;
-use App\PracticaPedagogica;
 
-class DiarioController extends Controller
+use App\PracticaPedagogica;
+use App\Producto;
+
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class DiarioController extends Controller
 
         $practica_pedagogicas = PracticaPedagogica::find($request->idPracticaPedagogica);
   
-        return view('diarios.index', compact('practica_pedagogicas'));
+        return view('productos.index', compact('practica_pedagogicas'));
     }
 
     /**
@@ -31,7 +31,7 @@ class DiarioController extends Controller
     {
         $practicas_pedagogicas = PracticaPedagogica::find($request->idPracticaPedagogicas);
 
-        return view('diarios.create', compact('request','practicas_pedagogicas'));
+        return view('productos.create', compact('request','practicas_pedagogicas'));
     }
 
     /**
@@ -43,12 +43,12 @@ class DiarioController extends Controller
     public function store(Request $request)
     {
 
-        $diario = Diario::create($request->all());
+        $producto = Producto::create($request->all());
     
-        toastr()->success('Diario Registrado con Exito');
+        toastr()->success('Producto Registrado con Exito');
 
         return redirect()
-            ->route('diarios.index',['idPracticaPedagogica' => $diario->practica_pedagogicas_id]);
+            ->route('productos.index',['idPracticaPedagogica' => $producto->practica_pedagogicas_id]);
     }
 
     /**
@@ -57,7 +57,7 @@ class DiarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function imprimirPdf(Diario $diario)
+    public function imprimirPdf(Producto $producto)
     {
         $diario = Diario::find($diario->id);
 
@@ -74,14 +74,14 @@ class DiarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Diario $diario)
+    public function edit(Producto $producto)
     {
 
-        $diario = Diario::find($diario->id);
+        $producto = Producto::find($producto->id);
 
-        $practicas_pedagogicas = PracticaPedagogica::find($diario->practica_pedagogicas_id);
+        $practicas_pedagogicas = PracticaPedagogica::find($producto->practica_pedagogicas_id);
 
-        return view('diarios.edit', compact('practica','diario','practicas_pedagogicas'));
+        return view('productos.edit', compact('practica','producto','practicas_pedagogicas'));
     }
 
     /**
@@ -91,16 +91,16 @@ class DiarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Diario $diario)
+    public function update(Request $request, Producto $producto)
     {
-        $request['practica_pedagogicas_id'] = $diario->practica_pedagogicas_id;
+        $request['practica_pedagogicas_id'] = $producto->practica_pedagogicas_id;
 
-        $diario->update($request->all());
+        $producto->update($request->all());
     
         toastr()->success('registro Actualizado  con Exito');
 
         return redirect()
-            ->route('diarios.index',['idPracticaPedagogica' => $diario->practica_pedagogicas_id]);
+            ->route('productos.index',['idPracticaPedagogica' => $producto->practica_pedagogicas_id]);
     }
 
     /**
@@ -109,10 +109,10 @@ class DiarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Diario $diario)
+    public function destroy(Producto $producto)
     {
-        $diario->delete();
+        $producto->delete();
         return redirect()
-            ->route('diarios.index',['idPracticaPedagogica' => $diario->practica_pedagogicas_id]);
+            ->route('productos.index',['idPracticaPedagogica' => $producto->practica_pedagogicas_id]);
     }
 }

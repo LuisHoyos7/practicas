@@ -39,6 +39,15 @@ Route::resource('colegios', 'ColegioController');
 Route::resource('docentes-grupos', 'DocenteGrupoController');
 
 Route::resource('inicio', 'InicioController');
+
+Route::resource('productos', 'ProductoController');
+
+Route::get('formato_pdf/{formatopractica}', 'FormatoPracticaController@imprimirPdf')->name('pdf');
+
+Route::get('producto_pdf/{producto}', 'ProductoController@imprimirPdf')->name('producto_pdf');
+
+Route::get('diario_pdf/{diario}', 'DiarioController@imprimirPdf')->name('diario_pdf');
+
 });
 
 // RUTA DE PRUEBA

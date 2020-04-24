@@ -2,18 +2,8 @@
     <div class="kt-portlet__head">
         <div class="kt-portlet__head-label">
             <h3 class="kt-portlet__head-title">
-            Informacion de preinscripciones
+            Informacion de Pre-inscripciones
             </h3>
-        </div>
-        <div class="kt-portlet__head-toolbar">
-            <div class="kt-portlet__head-wrapper">
-                <div class="kt-portlet__head-actions">
-                    <a href="" class="btn btn-success">
-                        <i class="la la-plus"></i>
-                        Nuevo
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 <div class="row">      

@@ -21,7 +21,7 @@
     </thead>
     <tbody>
         @foreach($formatos as $formato)
-            <tr>
+            <tr> 
                 <td>{{$formato->nombre}}</td>
                 <td>{{$formato->objetivo}}</td>
                 <td>
@@ -30,15 +30,15 @@
                 </td>
                 <td>
                     <div class="btn-group">
-                        <a type="button" href="{{route('preguntas_index',$formato->id)}}" class="btn btn-info btn-sm">
-                            Ver
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
                         </a>
                         <a type="button" href="" class="btn btn-success btn-sm">
-                             Imprimir
+                             Eliminar
                         </a>
                      
                         <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-danger btn-sm">
-                            Diligenciar
+                            llenar
                         </a>  
                     </div>
                 </td>

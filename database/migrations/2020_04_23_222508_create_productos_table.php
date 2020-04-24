@@ -4,23 +4,27 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiariosTable extends Migration
+class CreateProductosTable extends Migration
 {
     /**
      * Run the migrations.
      *
-     * @return void 
+     * @return void
      */
     public function up()
     {
-        Schema::create('diarios', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('practica_pedagogicas_id');
-            $table->unsignedBigInteger('estudiante_id');
-            $table->timestamp('fecha');
-            $table->string('analisis');
+            $table->string('titulo');
+            $table->string('problema');
+            $table->string('antecedentes');
+            $table->string('justitifcacion');
+            $table->string('marco_teorico');
+            $table->string('objetivos');
+            $table->string('marco_metodologico');
+            $table->string('bibliografia');
             $table->foreign('practica_pedagogicas_id')->references('id')->on('practica_pedagogicas');
-            $table->foreign('estudiante_id')->references('id')->on('estudiantes');
             $table->timestamps();
         });
     }
@@ -32,6 +36,6 @@ class CreateDiariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diarios');
+        Schema::dropIfExists('productos');
     }
 }

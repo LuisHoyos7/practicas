@@ -59,7 +59,10 @@
     margin: 10px !important;
 }
 
-
+input[type="radio"] {
+    
+    width: 20px !important;
+}
 
 /* .kt-portlet__body
 {

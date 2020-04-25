@@ -10,12 +10,20 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
-                  
-                     
-                            <a href="{{route('practicas.create')}}" class="btn btn-success">
-                                Crear Nueva
-                            </a>
-            
+                    @if($validar1 == 0)
+                        <a href="{{route('practicas.create')}}" class="btn btn-success" id="ocultar2">
+                            Crear Nueva
+                        </a>
+                    @endif
+
+                            <input id="valor1" hidden value="{{$validar1}}">
+                            <input id="valor2" hidden value="{{$validar2}}">
+
+                    @if($validar2 == 0)
+                        <a href="{{route('practicas.create')}}" class="btn btn-success" id="ocultar1">
+                            Crear Nueva
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -65,3 +73,14 @@
 </div>
 </div>
 
+<script type="text/javascript">
+
+$(document).ready( function(){
+    
+    if($('#valor1' == 0 && '#valor2' == 0))
+    {
+        $('#ocultar1').hide();
+        $('#ocultar2').show();
+    }
+});
+</script>

@@ -6,9 +6,6 @@
     <thead>
         <tr>
             <th>
-               Fecha Creacion 
-            </th>
-            <th>
                Semestre En Curso 
             </th>
             <th>
@@ -22,9 +19,6 @@
     <tbody>
         <tr>
             <td>
-                {{$diario->fecha}}
-            </td>
-            <td>
                 {{$practica->semestre->nombre}}
             </td>
             <td>
@@ -37,9 +31,58 @@
     </tbody>
 </table><br>
 
-<p><center><h3>Analisis / Comentarios / Vivencias</h3></center></p>
+<p><center><h3>Titulo</h3></center></p>
 <div class="row">
-    <div class="col-md-12">
-        {!! $diario->analisis !!}
+    <div class="col-md-8 offset-2">
+        {!! $producto->titulo !!}
+    </div>
+</div>
+
+<p><center><h3>Planteamiento del Problema</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->problema !!}
+    </div>
+</div>
+
+<p><center><h3>Antecedentes</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->antecedentes !!}
+    </div>
+</div>
+
+<p><center><h3>Justificacion</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->justificacion !!}
+    </div>
+</div>
+
+<p><center><h3>Marco Teorico</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->marco_teorico!!}
+    </div>
+</div>
+
+<p><center><h3>Objetivos</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->objetivos !!}
+    </div>
+</div>
+
+<p><center><h3>Marco Metodologico</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->marco_metodologico !!}
+    </div>
+</div>
+
+<p><center><h3>Bibliografia</h3></center></p>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        {!! $producto->bibliografia !!}
     </div>
 </div>

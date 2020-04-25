@@ -59,13 +59,13 @@ class ProductoController extends Controller
      */
     public function imprimirPdf(Producto $producto)
     {
-        $diario = Diario::find($diario->id);
+        $producto = Producto::find($producto->id);
 
-        $practica = PracticaPedagogica::find($diario->practica_pedagogicas_id);
+        $practica = PracticaPedagogica::find($producto->practica_pedagogicas_id);
 
-        $pdf = \PDF::loadView('diarios.pdf', compact('diario', 'practica'));
+        $pdf = \PDF::loadView('productos.pdf', compact('producto', 'practica'));
 
-        return $pdf->download('diario.pdf'); 
+        return $pdf->download('producto.pdf'); 
     }
 
     /**

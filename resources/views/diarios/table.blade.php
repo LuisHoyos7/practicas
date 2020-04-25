@@ -8,9 +8,11 @@
         <div class="kt-portlet__head-toolbar">
             <div class="kt-portlet__head-wrapper">
                 <div class="kt-portlet__head-actions">
+                    @if($validar == 0)
                     <a href="{{route('diarios.create',['idPracticaPedagogicas'=>$practica_pedagogicas])}}" class="btn btn-success">
                         Nuevo Diario
                     </a>
+                    @endif
                 </div>
             </div>
         </div>

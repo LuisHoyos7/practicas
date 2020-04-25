@@ -16,10 +16,11 @@ class ProductoController extends Controller
      */
     public function index(Request $request)
     {
+        $validar = Producto::where('practica_pedagogicas_id',$request->idPracticaPedagogica)->count();
 
         $practica_pedagogicas = PracticaPedagogica::find($request->idPracticaPedagogica);
   
-        return view('productos.index', compact('practica_pedagogicas'));
+        return view('productos.index', compact('practica_pedagogicas', 'validar'));
     }
 
     /**

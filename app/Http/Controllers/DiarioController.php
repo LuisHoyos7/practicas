@@ -17,9 +17,11 @@ class DiarioController extends Controller
     public function index(Request $request)
     {
 
+        $validar = Diario::where('practica_pedagogicas_id',$request->idPracticaPedagogica)->count();
+    
         $practica_pedagogicas = PracticaPedagogica::find($request->idPracticaPedagogica);
   
-        return view('diarios.index', compact('practica_pedagogicas'));
+        return view('diarios.index', compact('practica_pedagogicas', 'validar'));
     }
 
     /**

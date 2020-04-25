@@ -16,9 +16,15 @@ class FormatoPracticaController extends Controller
      
     public function index(Practica $practica)
     {
+        $estudiante_id= auth()->user()->estudiante->id;
+
         $formatos = $practica->formatos;
-        
-        return view('formatos_practicas.index', compact('formatos'));
+
+        $validar1 = PreguntaRespuesta::where('formato_id', 1)->where('estudiante_id', $estudiante_id)->count();
+
+        $validar2 = PreguntaRespuesta::where('formato_id', 2)->where('estudiante_id', $estudiante_id)->count();
+
+        return view('formatos_practicas.index', compact('formatos', 'validar1','validar2'));
     }
 
    

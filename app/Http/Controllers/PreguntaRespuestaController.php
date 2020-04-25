@@ -51,7 +51,6 @@ class PreguntaRespuestaController extends Controller
                   'observaciones'         => $observacion['observacion']
 
            ];
-
      
           PreguntaRespuesta::where('pregunta_id', $pregunta)->where('estudiante_id',$estudiante_id)->update($dataUpdate);
            
@@ -63,6 +62,13 @@ class PreguntaRespuestaController extends Controller
         {
         return redirect()->route('formatos_index',1);
         }
+
+        if($request->formato_id == 2 || $request->formato_id == 3 )
+        {
+        return redirect()->route('formatos_index',2);
+        }
+
+
   
     }
 
@@ -85,6 +91,9 @@ class PreguntaRespuestaController extends Controller
    
     public function destroy($id)
     {
-        
+        $pregunta_respuesta = PreguntaRespuesta::where('formato_id', $id)
+            ->where('estudiante_id', auth()->user()->estudiante->id)->delete();
+
+        return back();
     }
 }

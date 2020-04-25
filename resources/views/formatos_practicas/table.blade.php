@@ -15,7 +15,6 @@
         <tr>
             <th>Nombre Formato</th>
             <th>Objetivo</th>
-            <th>Diligenciado</th>
             <th>opciones</th>
         </tr>
     </thead>
@@ -25,21 +24,60 @@
                 <td>{{$formato->nombre}}</td>
                 <td>{{$formato->objetivo}}</td>
                 <td>
-                    @if($formato->diligenciado == true ) Si @endif
-                    @if($formato->diligenciado == false ) No @endif
-                </td>
-                <td>
                     <div class="btn-group">
+                        @if($formato->id == 1 && $validar1 > 0)
                         <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
                             Pdf
                         </a>
-                        <a type="button" href="" class="btn btn-success btn-sm">
-                             Eliminar
+                        @endif
+
+                        @if($formato->id == 2 && $validar2 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
                         </a>
+                        @endif
+
+
+                        @if($formato->id == 1 && $validar1 > 0)
+                        
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+                    
+                        @if($formato->id == 2 && $validar2 > 0)
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+                        {{ Form::close() }}
+                        @endif
+                       
                      
-                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-danger btn-sm">
+                        @if($formato->id == 1 && $validar1 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
                             llenar
                         </a>  
+                        @endif
+
+                        @if($formato->id == 2 && $validar2 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
                     </div>
                 </td>
             </tr>

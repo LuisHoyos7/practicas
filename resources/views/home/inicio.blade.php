@@ -222,42 +222,6 @@ padding-left: 30px !important;
     </section>
 </div>
 
-<div id="galeria" class="row cinco">
-
-  <div class="col-md-3">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam soluta atque tempore aperiam rem fugit exercitationem eveniet suscipit repellendus tempora sequi ipsam delectus ad esse illum, earum alias dicta libero?
-  </div>
-  <div class="col-md-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad consequatur facilis ab, excepturi enim nulla odio cumque quaerat, nostrum, ipsum sequi sunt voluptatum eum reprehenderit magnam! Eos harum quos voluptatum.
-  </div>
-  <div class="col-md-3">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi earum fugiat eius sint maiores unde, sit nihil natus, beatae tenetur cum deserunt quam temporibus, facilis perspiciatis suscipit laborum ea molestiae!
-  </div>
-
-  <div class="col-md-3">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error a praesentium dolorum, rem accusamus alias excepturi? Doloremque molestias nemo, enim cum nostrum iusto modi quo, nihil reiciendis tenetur, cumque odit.
-  </div>
-
-</div>
-
-<div class="row cinco">
-
-  <div class="col-md-3">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam soluta atque tempore aperiam rem fugit exercitationem eveniet suscipit repellendus tempora sequi ipsam delectus ad esse illum, earum alias dicta libero?
-  </div>
-  <div class="col-md-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad consequatur facilis ab, excepturi enim nulla odio cumque quaerat, nostrum, ipsum sequi sunt voluptatum eum reprehenderit magnam! Eos harum quos voluptatum.
-  </div>
-  <div class="col-md-3">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi earum fugiat eius sint maiores unde, sit nihil natus, beatae tenetur cum deserunt quam temporibus, facilis perspiciatis suscipit laborum ea molestiae!
-  </div>
-
-  <div class="col-md-3">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error a praesentium dolorum, rem accusamus alias excepturi? Doloremque molestias nemo, enim cum nostrum iusto modi quo, nihil reiciendis tenetur, cumque odit.
-  </div>
-
-</div>
-
 
  <footer class="ftco-footer ftco-bg-dark ftco-section seis" id="contactos">
   

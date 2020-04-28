@@ -155,11 +155,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </i><span class="kt-menu__link-text">Nosotros</span>
                                             </a>
                                         </li>
-                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="#galeria" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
-                                                </i><span class="kt-menu__link-text">Galeria</span>
-                                            </a>
-                                        </li>
+                            
                                         <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel"aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                             <a href="#contactos" class="kt-menu__link"><i class="kt-menu__link-icon fa fa-building">
                                                 </i><span class="kt-menu__link-text">Contacto</span>
@@ -245,9 +241,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="kt-header__topbar-item">
                                         <div class="kt-header__topbar-wrapper">
                                             <span class="kt-header__topbar-icon">
-                                                <i>
-                                                    <a style="color:green !important" href="{{ url('/login') }}" class="">Entrar</a>
-                                                </i>
+                                                <a class="btn btn-label-success" style="color:black !important" href="{{ url('/login') }}" class="">Entrar</a>
                                             </span>
                                         </div>
                                     </div>

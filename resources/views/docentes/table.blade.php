@@ -42,7 +42,7 @@
                         <td>{{$docente->titulo}} </td>
                         <td>{{$docente->tipoDocente->nombre}}</td>
                         <td>
-                         @if(auth()->user()->hasRole('administrador'))
+                         @if(auth()->user()->hasRole('administrador') || auth()->user()->hasRole('docente'))
                             {{ Form::open(['route' => ['docentes.destroy', $docente->id], 'method' => 'delete']) }}
 
                             <div class="btn-group">

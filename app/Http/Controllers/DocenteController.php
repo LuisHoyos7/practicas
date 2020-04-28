@@ -11,9 +11,19 @@ class DocenteController extends Controller
    
     public function index()
     {
-        $docentes = Docente::all();
+        
+        if( auth()->user()->hasRole('docente'))
+        {
+            $docentes = Docente::where('id', auth()->user()->docente->id)->get();
 
-        return view('docentes.index', compact('docentes'));
+            return view('docentes.index', compact('docentes'));
+        }else 
+        {
+             $docentes = Docente::all();
+
+            return view('docentes.index', compact('docentes'));
+        }
+       
     }
 
    

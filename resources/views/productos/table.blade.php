@@ -52,6 +52,7 @@
                             {{ Form::open(['route' => ['productos.destroy', $producto->id], 'method' => 'delete']) }}
                             <td>
                                 <div class="btn-group">
+                                    @if( auth()->user()->hasRole('estudiante'))
                                     <a href="{{route('producto_pdf', $producto->id)}}" class="btn btn-info btn-sm">
                                     Pdf
                                     </a>
@@ -66,6 +67,14 @@
                                         'class' => 'btn btn-danger btn-sm',
                                         'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
                                     ]) }}
+
+                                    @endif
+
+                                     @if( auth()->user()->hasRole('docente'))
+                                    <a href="{{route('productos.edit', $producto->id)}}" class="btn btn-success btn-sm">
+                                    Revisar
+                                    </a>
+                                    @endif
                            
                                 </div>
                             {{ Form::close() }}

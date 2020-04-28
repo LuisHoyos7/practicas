@@ -30,6 +30,10 @@ Route::resource('preguntas_respuestas', 'PreguntaRespuestaController');
 
 Route::resource('diarios', 'DiarioController');
 
+Route::put('revisar_diario/{diario}', 'DiarioController@aprobarPractica')->name('diarios.aprobarPractica');
+
+Route::put('revisar_producto/{producto}', 'ProductoController@aprobarPractica')->name('productos.aprobarPractica');
+
 Route::resource('grupos', 'GrupoController');
 
 Route::resource('docentes', 'DocenteController');

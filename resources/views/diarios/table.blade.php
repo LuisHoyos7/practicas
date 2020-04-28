@@ -40,14 +40,18 @@
                     
                             {{ Form::open(['route' => ['diarios.destroy', $diario->id], 'method' => 'delete']) }}
                             <td>
+                                @if( auth()->user()->hasRole('estudiante'))
                                 <div class="btn-group">
                                     <a href="{{route('diario_pdf', $diario->id)}}" class="btn btn-info btn-sm">
                                     Pdf
                                     </a>
 
+
+                                 
                                     <a href="{{route('diarios.edit', $diario->id)}}" class="btn btn-success btn-sm">
                                     Editar
                                     </a>
+                                 
 
                                     {{ Form::button('<i class="la la-trash"></i>',
                                     [
@@ -57,6 +61,13 @@
                                     ]) }}
                            
                                 </div>
+                                @endif
+
+                                 @if( auth()->user()->hasRole('docente'))
+                                    <a href="{{route('diarios.edit', $diario->id)}}" class="btn btn-success btn-sm">
+                                    Revisar
+                                    </a>
+                                    @endif
                             {{ Form::close() }}
                             </td>
                     </tr>

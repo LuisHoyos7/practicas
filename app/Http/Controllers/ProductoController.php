@@ -41,7 +41,7 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
 
         $producto = Producto::create($request->all());
@@ -113,7 +113,36 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         $producto->delete();
-        return redirect()
+        return redirect() 
             ->route('productos.index',['idPracticaPedagogica' => $producto->practica_pedagogicas_id]);
+    }
+
+    public function aprobarPractica(Producto $producto)
+
+    {
+        $data = 
+        [
+        'producto_finalizado' => true
+        ];
+
+        $data2 = 
+        [
+        'finalizada' => true
+        ];
+
+
+        $practica_pedagogica = PracticaPedagogica::where('id', $producto->practica_pedagogicas_id)
+            ->update($data);
+
+        $practica_pedagogica = PracticaPedagogica::find($producto->practica_pedagogicas_id);
+            
+        if($practica_pedagogica->producto_finalizado == true && $practica_pedagogica->diario_finalizado ==true)
+        {
+            $practica_pedagogica = PracticaPedagogica::where('id', $producto->practica_pedagogicas_id)
+            ->update($data2);
+        }
+
+        return redirect()
+            ->route('practicas.index');
     }
 }

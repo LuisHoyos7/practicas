@@ -20,6 +20,8 @@ class CreatePracticaPedagogicasTable extends Migration
             $table->unsignedBigInteger('semestre_id');
             $table->unsignedBigInteger('docente_id');
             $table->unsignedBigInteger('colegio_id');
+            $table->boolean('diario_finalizado')->default(false);
+            $table->boolean('producto_finalizado')->default(false);
             $table->boolean('finalizada')->default(false);
             $table->foreign('practica_id')->references('id')->on('practicas');
             $table->foreign('docente_id')->references('id')->on('docentes');

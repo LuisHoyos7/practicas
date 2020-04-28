@@ -5,11 +5,19 @@
         </h3>
     </div>
 </div>
-
+ 
 @if(empty($producto))
 {!! Form::open(['route' => 'productos.store']) !!}
 @else
+
+@if( auth()->user()->hasRole('docente'))
+{!! Form::model($producto, ['route' => ['productos.aprobarPractica', $producto->id], 'method' => 'PUT']) !!}
+@endif
+
+@if( auth()->user()->hasRole('estudiante'))
 {!! Form::model($producto, ['route' => ['productos.update', $producto->id], 'method' => 'PUT']) !!}
+@endif
+
 @endif
 
 <div class="row row1">
@@ -90,15 +98,34 @@
 <input name="practica_pedagogicas_id" class="form-control"  hidden value="{{@$request->idPracticaPedagogicas}}">
 
 <br>
+
+
+@if( auth()->user()->hasRole('estudiante'))
 <div class="row">
     <div class="col-md-12">
         <center>
             <button class="submit btn btn-success btn-md" >
-                {{empty($producto) ? 'Guardar' : 'Actualizar'}}
+                {{empty($diario) ? 'Guardar' : 'Actualizar'}}
             </button>
         </center>
     </div>
 </div><br>
+@endif
+
+@if( auth()->user()->hasRole('docente'))
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <button class="submit btn btn-danger btn-md" >
+                @if(!empty($producto)) Aprobar
+                @endif
+            </button>
+        </center>
+    </div>
+</div><br>
+
+@endif
 
 {!! Form::close() !!}
 

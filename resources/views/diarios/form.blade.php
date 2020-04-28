@@ -5,11 +5,19 @@
         </h3>
     </div>
 </div>
-
+ 
 @if(empty($diario))
 {!! Form::open(['route' => 'diarios.store']) !!}
 @else
+
+@if( auth()->user()->hasRole('docente'))
+{!! Form::model($diario, ['route' => ['diarios.aprobarPractica', $diario->id], 'method' => 'PUT']) !!}
+@endif
+
+@if( auth()->user()->hasRole('estudiante'))
 {!! Form::model($diario, ['route' => ['diarios.update', $diario->id], 'method' => 'PUT']) !!}
+@endif
+
 @endif
 
 <div class="row row1">
@@ -59,6 +67,7 @@
 
 </div>
 
+@if( auth()->user()->hasRole('estudiante'))
 <div class="row">
     <div class="col-md-12">
         <center>
@@ -68,6 +77,22 @@
         </center>
     </div>
 </div><br>
+@endif
+
+@if( auth()->user()->hasRole('docente'))
+
+<div class="row">
+    <div class="col-md-12">
+        <center>
+            <button class="submit btn btn-danger btn-md" >
+                @if(!empty($diario)) Aprobar
+                @endif
+            </button>
+        </center>
+    </div>
+</div><br>
+
+@endif
 
 {!! Form::close() !!}
 

@@ -110,11 +110,38 @@ class DiarioController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function destroy(Diario $diario)
     {
         $diario->delete();
         return redirect()
             ->route('diarios.index',['idPracticaPedagogica' => $diario->practica_pedagogicas_id]);
+    }
+
+    public function aprobarPractica(Diario $diario, Request $request)
+
+    {
+        $data = 
+        [
+        'diario_finalizado' => true
+        ];
+
+        $data2 = 
+        [
+        'finalizada' => true
+        ];
+
+        $practica_pedagogica = PracticaPedagogica::where('id',$diario->practica_pedagogicas_id)->update($data);
+ 
+        $practica_pedagogica = PracticaPedagogica::find($diario->practica_pedagogicas_id);
+
+        if($practica_pedagogica->producto_finalizado == true && $practica_pedagogica->diario_finalizado ==true)
+        {
+            $practica_pedagogica = PracticaPedagogica::where('id', $producto->practica_pedagogicas_id)
+            ->update($data2);
+        }
+
+        return redirect()
+            ->route('practicas.index');
     }
 }

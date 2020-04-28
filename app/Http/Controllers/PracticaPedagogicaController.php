@@ -23,8 +23,10 @@ class PracticaPedagogicaController extends Controller
         
         return view ('practicas.index',compact('practica_pedagogicas'));
     
-       }else
+       }
 
+       if(auth()->user()->hasRole('estudiante'))
+        {
         $validar1 = auth()->user()->estudiante->practicasPedagogicas->where('finalizada', false)->count();
        
         $validar2 = PracticaPedagogica::where('estudiante_id',auth()->user()->estudiante->id)->count();
@@ -32,6 +34,18 @@ class PracticaPedagogicaController extends Controller
         $practica_pedagogicas = auth()->user()->estudiante->practicasPedagogicas;
        
         return view('practicas.index', compact('practica_pedagogicas', 'validar1', 'validar2'));
+       }
+
+       if(auth()->user()->hasRole('docente'))
+       {
+         $user_id = auth()->user()->docente->id;
+
+         $practica_pedagogicas = PracticaPedagogica::where('docente_id', $user_id)
+            ->where('finalizada', false)->get();
+
+         return view('practicas.index', compact('practica_pedagogicas'));
+       }
+        
     }
 
     public function create()

@@ -24,8 +24,8 @@
                 <thead>
                     <tr>
                         <th>Fecha de creacion del Diario</th>
-                        <th>Practica en proceso</th>
                         <th>Semestre Actual</th>
+                        <th>Practica en proceso</th>
                         <th>opciones</th>
                     </tr>
                 </thead>

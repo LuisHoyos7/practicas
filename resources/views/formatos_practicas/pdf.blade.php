@@ -58,7 +58,12 @@
                 @foreach($respuestas as $respuesta)
                     <tr>
                         <td>{{$respuesta->nombre}}</td>
+                        @if(@$formato_id == 1 )
                         <td>{{$respuesta->descripcion}}</td>
+                        @endif
+                        @if(empty(@$formato_id))
+                        <td>{{$respuesta->nombre}}</td>
+                        @endif
                         <td>{{$respuesta->observaciones}}</td> 
                     </tr>
                 @endforeach

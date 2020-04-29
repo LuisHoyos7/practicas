@@ -63,13 +63,16 @@ class PreguntaRespuestaController extends Controller
         return redirect()->route('formatos_index',1);
         }
 
-        if($request->formato_id == 2 || $request->formato_id == 3 )
+        if($request->formato_id == 3 || $request->formato_id == 4 )
         {
         return redirect()->route('formatos_index',2);
         }
 
+        if($request->formato_id == 5 || $request->formato_id == 6 || $request->formato_id == 7 || $request->formato_id == 8 )
+        {
+        return redirect()->route('formatos_index',3);
+        }
 
-  
     }
 
     

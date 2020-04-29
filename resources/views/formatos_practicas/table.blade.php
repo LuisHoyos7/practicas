@@ -29,17 +29,6 @@
                         <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
                             Pdf
                         </a>
-                        @endif
-
-                        @if($formato->id == 2 && $validar2 > 0)
-                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
-                            Pdf
-                        </a>
-                        @endif
-
-
-                        @if($formato->id == 1 && $validar1 > 0)
-                        
                         {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
 
                         {{ Form::button('<i class="la la-trash"></i>',
@@ -51,8 +40,11 @@
 
                          {{ Form::close() }}
                         @endif
-                    
+
                         @if($formato->id == 2 && $validar2 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
 
                         {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
 
@@ -62,10 +54,112 @@
                                     'class' => 'btn btn-danger btn-sm',
                                     'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
                                 ]) }}
-                        {{ Form::close() }}
+
+                         {{ Form::close() }}
                         @endif
-                       
-                     
+
+                        @if($formato->id == 3 && $validar3 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+
+                        @if($formato->id == 4 && $validar4 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+
+                        @if($formato->id == 5 && $validar5 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+
+                        @if($formato->id == 6 && $validar6 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+
+                        @if($formato->id == 7 && $validar7 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+
+                        @if($formato->id == 8 && $validar8 > 0)
+                        <a type="button" href="{{route('pdf',[$formato->id, 'estudiante_id' => auth()->user()->estudiante->id])}}" class="btn btn-info btn-sm">
+                            Pdf
+                        </a>
+
+                        {{ Form::open(['route' => ['preguntas_respuestas.destroy', $formato->id], 'method' => 'delete']) }}
+
+                        {{ Form::button('<i class="la la-trash"></i>',
+                                [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-danger btn-sm',
+                                    'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
+                                ]) }}
+
+                         {{ Form::close() }}
+                        @endif
+                                 
                         @if($formato->id == 1 && $validar1 == 0)
                         <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
                             llenar
@@ -73,6 +167,42 @@
                         @endif
 
                         @if($formato->id == 2 && $validar2 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
+                        @if($formato->id == 3 && $validar3 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
+                        @if($formato->id == 4 && $validar4 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
+                        @if($formato->id == 5 && $validar5 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
+                        @if($formato->id == 6 && $validar6 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
+                        @if($formato->id == 7 && $validar7 == 0)
+                        <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
+                            llenar
+                        </a>  
+                        @endif
+
+                        @if($formato->id == 8 && $validar8 == 0)
                         <a type="button" href="{{route('preguntas_create',$formato->id)}}" class="btn btn-success btn-sm">
                             llenar
                         </a>  

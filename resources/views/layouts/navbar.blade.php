@@ -24,7 +24,7 @@
                     </div>
                 </li>
                 @endif
-            @endif
+          
 
             @if(auth()->user()->hasRole('docente') )
                 <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="{{route('practicas.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-user"></i><span class="kt-menu__link-text"> <center>Revisar Practicas</center></span></a>
@@ -32,7 +32,7 @@
                 </li>
 
              @endif
-
+  @endif
 
                 @if (Auth::check())
                 @if(auth()->user()->hasRole('administrador')  )

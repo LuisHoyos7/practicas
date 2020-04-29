@@ -20,7 +20,7 @@ class PreguntaController extends Controller
 
     public function create(FormatoPractica $formatopractica)
     {
-        $preguntas = $formatopractica->preguntas;
+        $preguntas = $formatopractica->preguntas->sortBy('id');
         
         return view('preguntas.create',compact('preguntas','formatopractica'));
     }

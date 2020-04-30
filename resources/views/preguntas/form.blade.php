@@ -61,7 +61,7 @@
 <!--fin  formato 1 practica pedagogica 1 -->
 
 <!--inicio formato 2 practica pedagogica 1 -->
-@if($formatopractica->id == 2)
+@if($formatopractica->id == 2 )
 <br><br>
 <div class="row row1">
     <div class="col-md-6">
@@ -128,6 +128,375 @@
 @endif
 <!--fin formato 2 practica pedagogica 1 -->
 
+
+
+
+<!--inicio formato 1 practica peda 2-->
+@if($formatopractica->id == 3)
+<br><br>
+<div class="row row1">
+    <div class="col-md-6">
+        <label><h3>Nombre de Instrumento</h3></label>
+        <p>{{$formatopractica->nombre}}</p>
+    </div>
+    <div class="col-md-6">
+        <label><h3>Objetivo</h3></label>
+        <p class="text-justify">{{$formatopractica->objetivo}}</p>
+    </div>
+</div><hr>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Informacion Personal</h3>
+     </div>
+</div>
+<div class="row row1">
+    <div class="col-md-3">
+        <label><b>Observador(a)</b></label>
+        <input type="text" class="form-control" readonly value="{{auth()->user()->first_name}} {{auth()->user()->last_name}}">
+        <input type="text" name="estudiante_id" hidden class="form-control" readonly value="{{auth()->user()->estudiante->id}}">
+    </div>
+    <div class="col-md-2">
+        <label><b>Fecha de creacion</b></label>
+        <input type="text" name="fecha" class="form-control" readonly value="{{now()}} ">
+    </div>
+    <div class="col-md-2">
+        <label><b>ubicacion</b></label>
+        <input type="text" name="ubicacion" class="form-control" placeholder="Ingrese la ubicacion">
+    </div>
+    <div class="col-md-3">
+        <label><b>Situación observada y contexto</b></label>
+        <input type="text" name="contexto" class="form-control" placeholder="Digite la respuesta">
+    </div>
+    <div class="col-md-2">
+        <label><b>Tiempo de observacion</b></label>
+        <input type="text" name="tiempobservacion" class="form-control" placeholder="Ejemplo: 2 horas">
+    </div>
+</div><br><hr>
+
+<div class="row row1">
+    <div class="col-md-2">
+        <label><b>Barrio</b></label>
+        <input type="text" name="institucion" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label><b>Institucion</b></label>
+        <input type="text" name="barrio" class="form-control">
+    </div>
+</div>
+@endif
+
+<!--fin formato 1 practica peda 2-->
+
+
+
+<!--inicio formato 2 practica peda 2-->
+@if($formatopractica->id == 4)
+<br><br>
+<div class="row row1">
+    <div class="col-md-6">
+        <label><h3>Nombre de Instrumento</h3></label>
+        <p>{{$formatopractica->nombre}}</p>
+    </div>
+    <div class="col-md-6">
+        <label><h3>Objetivo</h3></label>
+        <p class="text-justify">{{$formatopractica->objetivo}}</p>
+    </div>
+</div><hr>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Informacion Personal</h3>
+     </div>
+</div>
+<div class="row row1">
+    <div class="col-md-3">
+        <label><b>Observador(a)</b></label>
+        <input type="text" class="form-control" readonly value="{{auth()->user()->first_name}} {{auth()->user()->last_name}}">
+        <input type="text" name="estudiante_id" hidden class="form-control" readonly value="{{auth()->user()->estudiante->id}}">
+    </div>
+    <div class="col-md-2">
+        <label><b>Fecha de creacion</b></label>
+        <input type="text" name="fecha" class="form-control" readonly value="{{now()}} ">
+    </div>
+    <div class="col-md-2">
+        <label><b>ubicacion</b></label>
+        <input type="text" name="ubicacion" class="form-control" placeholder="Ingrese la ubicacion">
+    </div>
+    <div class="col-md-3">
+        <label><b>Situación observada y contexto</b></label>
+        <input type="text" name="contexto" class="form-control" placeholder="Digite la respuesta">
+    </div>
+    <div class="col-md-2">
+        <label><b>Tiempo de observacion</b></label>
+        <input type="text" name="tiempobservacion" class="form-control" placeholder="Ejemplo: 2 horas">
+    </div>
+</div><br><hr>
+
+<div class="row row1">
+    <div class="col-md-2">
+        <label><b>Barrio</b></label>
+        <input type="text" name="institucion" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label><b>Institucion</b></label>
+        <input type="text" name="barrio" class="form-control">
+    </div>
+</div>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Cuestionario</h3>
+    </div>
+</div>
+
+<div class="row row1">
+    <div class="col-md-5"><h5>Aspectos</h5></div>
+    <div class="col-md-4"><h5>Evidencia en el PEI</h5></div>
+    <div class="col-md-3"><h5>Observaciones</h5></div>
+</div>
+@endif
+<!--fin formato 2 practica peda 2-->
+
+
+
+
+<!--inicio formato 1 practica peda 3-->
+
+@if($formatopractica->id == 5 )
+<br><br>
+<div class="row row1">
+    <div class="col-md-6">
+        <label><h3>Nombre de Instrumento</h3></label>
+        <p>{{$formatopractica->nombre}}</p>
+    </div>
+    <div class="col-md-6">
+        <label><h3>Objetivo</h3></label>
+        <p class="text-justify">{{$formatopractica->objetivo}}</p>
+    </div>
+</div><hr>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Informacion Personal</h3>
+     </div>
+</div>
+<div class="row row1">
+    <div class="col-md-3">
+        <label><b>Observador(a)</b></label>
+        <input type="text" class="form-control" readonly value="{{auth()->user()->first_name}} {{auth()->user()->last_name}}">
+        <input type="text" name="estudiante_id" hidden class="form-control" readonly value="{{auth()->user()->estudiante->id}}">
+    </div>
+    <div class="col-md-2">
+        <label><b>Fecha de creacion</b></label>
+        <input type="text" name="fecha" class="form-control" readonly value="{{now()}} ">
+    </div>
+    <div class="col-md-2">
+        <label><b>ubicacion</b></label>
+        <input type="text" name="ubicacion" class="form-control" placeholder="Ingrese la ubicacion">
+    </div>
+    <div class="col-md-3">
+        <label><b>Situación observada y contexto</b></label>
+        <input type="text" name="contexto" class="form-control" placeholder="Digite la respuesta">
+    </div>
+    <div class="col-md-2">
+        <label><b>Tiempo de observacion</b></label>
+        <input type="text" name="tiempobservacion" class="form-control" placeholder="Ejemplo: 2 horas">
+    </div>
+</div><br><hr>
+
+<div class="row row1">
+    <div class="col-md-2">
+        <label><b>Barrio</b></label>
+        <input type="text" name="institucion" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label><b>Institucion</b></label>
+        <input type="text" name="barrio" class="form-control">
+    </div>
+</div>
+
+@endif
+
+
+
+
+
+
+
+@if($formatopractica->id == 6 )
+<br><br>
+<div class="row row1">
+    <div class="col-md-6">
+        <label><h3>Nombre de Instrumento</h3></label>
+        <p>{{$formatopractica->nombre}}</p>
+    </div>
+    <div class="col-md-6">
+        <label><h3>Objetivo</h3></label>
+        <p class="text-justify">{{$formatopractica->objetivo}}</p>
+    </div>
+</div><hr>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Informacion Personal</h3>
+     </div>
+</div>
+<div class="row row1">
+    <div class="col-md-3">
+        <label><b>Observador(a)</b></label>
+        <input type="text" class="form-control" readonly value="{{auth()->user()->first_name}} {{auth()->user()->last_name}}">
+        <input type="text" name="estudiante_id" hidden class="form-control" readonly value="{{auth()->user()->estudiante->id}}">
+    </div>
+    <div class="col-md-2">
+        <label><b>Fecha de creacion</b></label>
+        <input type="text" name="fecha" class="form-control" readonly value="{{now()}} ">
+    </div>
+    <div class="col-md-2">
+        <label><b>ubicacion</b></label>
+        <input type="text" name="ubicacion" class="form-control" placeholder="Ingrese la ubicacion">
+    </div>
+    <div class="col-md-3">
+        <label><b>Situación observada y contexto</b></label>
+        <input type="text" name="contexto" class="form-control" placeholder="Digite la respuesta">
+    </div>
+    <div class="col-md-2">
+        <label><b>Tiempo de observacion</b></label>
+        <input type="text" name="tiempobservacion" class="form-control" placeholder="Ejemplo: 2 horas">
+    </div>
+</div><br><hr>
+
+<div class="row row1">
+    <div class="col-md-2">
+        <label><b>Barrio</b></label>
+        <input type="text" name="institucion" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label><b>Institucion</b></label>
+        <input type="text" name="barrio" class="form-control">
+    </div>
+</div>
+
+@endif
+
+
+
+
+@if($formatopractica->id == 7 )
+<br><br>
+<div class="row row1">
+    <div class="col-md-6">
+        <label><h3>Nombre de Instrumento</h3></label>
+        <p>{{$formatopractica->nombre}}</p>
+    </div>
+    <div class="col-md-6">
+        <label><h3>Objetivo</h3></label>
+        <p class="text-justify">{{$formatopractica->objetivo}}</p>
+    </div>
+</div><hr>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Informacion Personal</h3>
+     </div>
+</div>
+<div class="row row1">
+    <div class="col-md-3">
+        <label><b>Observador(a)</b></label>
+        <input type="text" class="form-control" readonly value="{{auth()->user()->first_name}} {{auth()->user()->last_name}}">
+        <input type="text" name="estudiante_id" hidden class="form-control" readonly value="{{auth()->user()->estudiante->id}}">
+    </div>
+    <div class="col-md-2">
+        <label><b>Fecha de creacion</b></label>
+        <input type="text" name="fecha" class="form-control" readonly value="{{now()}} ">
+    </div>
+    <div class="col-md-2">
+        <label><b>ubicacion</b></label>
+        <input type="text" name="ubicacion" class="form-control" placeholder="Ingrese la ubicacion">
+    </div>
+    <div class="col-md-3">
+        <label><b>Situación observada y contexto</b></label>
+        <input type="text" name="contexto" class="form-control" placeholder="Digite la respuesta">
+    </div>
+    <div class="col-md-2">
+        <label><b>Tiempo de observacion</b></label>
+        <input type="text" name="tiempobservacion" class="form-control" placeholder="Ejemplo: 2 horas">
+    </div>
+</div><br><hr>
+
+<div class="row row1">
+    <div class="col-md-2">
+        <label><b>Barrio</b></label>
+        <input type="text" name="institucion" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label><b>Institucion</b></label>
+        <input type="text" name="barrio" class="form-control">
+    </div>
+</div>
+
+@endif
+
+
+@if($formatopractica->id == 8)
+<br><br>
+<div class="row row1">
+    <div class="col-md-6">
+        <label><h3>Nombre de Instrumento</h3></label>
+        <p>{{$formatopractica->nombre}}</p>
+    </div>
+    <div class="col-md-6">
+        <label><h3>Objetivo</h3></label>
+        <p class="text-justify">{{$formatopractica->objetivo}}</p>
+    </div>
+</div><hr>
+
+<div class="row row1">
+    <div class="col-md-12">
+        <h3>Informacion Personal</h3>
+     </div>
+</div>
+<div class="row row1">
+    <div class="col-md-3">
+        <label><b>Observador(a)</b></label>
+        <input type="text" class="form-control" readonly value="{{auth()->user()->first_name}} {{auth()->user()->last_name}}">
+        <input type="text" name="estudiante_id" hidden class="form-control" readonly value="{{auth()->user()->estudiante->id}}">
+    </div>
+    <div class="col-md-2">
+        <label><b>Fecha de creacion</b></label>
+        <input type="text" name="fecha" class="form-control" readonly value="{{now()}} ">
+    </div>
+    <div class="col-md-2">
+        <label><b>ubicacion</b></label>
+        <input type="text" name="ubicacion" class="form-control" placeholder="Ingrese la ubicacion">
+    </div>
+    <div class="col-md-3">
+        <label><b>Situación observada y contexto</b></label>
+        <input type="text" name="contexto" class="form-control" placeholder="Digite la respuesta">
+    </div>
+    <div class="col-md-2">
+        <label><b>Tiempo de observacion</b></label>
+        <input type="text" name="tiempobservacion" class="form-control" placeholder="Ejemplo: 2 horas">
+    </div>
+</div><br><hr>
+
+<div class="row row1">
+    <div class="col-md-2">
+        <label><b>Barrio</b></label>
+        <input type="text" name="institucion" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label><b>Institucion</b></label>
+        <input type="text" name="barrio" class="form-control">
+    </div>
+</div>
+
+<div class="row row1">
+    <div class="col-md-5"><h5>Criterios</h5></div>
+    <div class="col-md-4"><h5>SI / NO</h5></div>
+    <div class="col-md-3"><h5>Comentarios</h5></div>
+</div>
+@endif
 
 
 

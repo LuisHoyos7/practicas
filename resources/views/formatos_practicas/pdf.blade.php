@@ -64,11 +64,14 @@
                 @foreach($respuestas as $respuesta)
                     <tr>
                         <td>{{$respuesta->nombre}}</td>
-                        @if(@$formato_id == 1 )
+                        @if(@$formato_id == 1 || @$formato_id == 3 ||
+                        @$formato_id == 4 || @$formato_id == 5 ||
+                        @$formato_id == 6 || @$formato_id == 7  ||
+                        @$formato_id == 8)
                         <td>{{$respuesta->descripcion}}</td>
                         @endif
                         @if(empty(@$formato_id))
-                        <td>{{$respuesta->nombre}}</td>
+                        <td>{{$respuesta->n}}</td>
                         @endif
                         <td>{{$respuesta->observaciones}}</td> 
                     </tr>

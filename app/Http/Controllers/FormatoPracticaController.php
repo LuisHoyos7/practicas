@@ -54,7 +54,7 @@ class FormatoPracticaController extends Controller
 
     public function imprimirPdf(FormatoPractica $formatopractica, Request $request)
     {
-        if($formatopractica->id == 1 )
+        if($formatopractica->id <> 2 )
         {
             $respuestas = DB::table('preguntas as p')
             ->join('pregunta_respuestas as pr', 'p.id', '=', 'pr.pregunta_id')
@@ -73,14 +73,16 @@ class FormatoPracticaController extends Controller
 
         return $pdf->download('formato.pdf');
 
-        }else 
+        }
+
+        if($formatopractica->id == 2 )
         {
            $respuestas = DB::table('preguntas as p')
             ->join('pregunta_respuestas as pr', 'p.id', '=', 'pr.pregunta_id')
             ->join('opcion_preguntas as op', 'pr.opcionpregunta_id', '=', 'op.id')
             ->where('pr.estudiante_id', $request->estudiante_id)
             ->where('pr.formato_id', $formatopractica->id)
-            ->select('p.nombre', 'op.nombre', 'pr.observaciones')
+            ->select('p.nombre', 'op.nombre as n', 'pr.observaciones')
             ->get();
 
         $encabezado_formatos = EncabezadoFormato::where('formato_id',$formatopractica->id)

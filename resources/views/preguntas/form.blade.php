@@ -140,7 +140,7 @@
 
     @if($pregunta->tipo <> 'titulo')
     <div class="col-md-5">
-        <input type="text" class="form-control" readonly value="{{$pregunta->nombre}}" >   
+        <p readonly >¿{{$pregunta->nombre}}? </p>
     </div>
      @endif
 

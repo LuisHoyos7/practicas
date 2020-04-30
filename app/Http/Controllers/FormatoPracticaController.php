@@ -69,7 +69,7 @@ class FormatoPracticaController extends Controller
             ->where('estudiante_id',$request->estudiante_id)->get();
 
 
-        $pdf = \PDF::loadView('formatos_practicas.pdf', compact('respuestas', 'encabezado_formatos', 'preguntas','formato_id'));
+        $pdf = \PDF::loadView('formatos_practicas.pdf', compact('respuestas', 'encabezado_formatos', 'preguntas','formato_id'))->setPaper('a4', 'landscape');
 
         return $pdf->download('formato.pdf');
 
@@ -87,9 +87,11 @@ class FormatoPracticaController extends Controller
             ->where('estudiante_id',$request->estudiante_id)->get();
 
 
-        $pdf = \PDF::loadView('formatos_practicas.pdf', compact('respuestas', 'encabezado_formatos', 'preguntas'));
+        $pdf = \PDF::loadView('formatos_practicas.pdf', compact('respuestas', 'encabezado_formatos', 'preguntas'))->setPaper('a4', 'landscape');
 
         return $pdf->download('formato.pdf');
+
+    
         }
     
         

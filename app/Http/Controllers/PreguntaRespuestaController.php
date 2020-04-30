@@ -97,6 +97,9 @@ class PreguntaRespuestaController extends Controller
         $pregunta_respuesta = PreguntaRespuesta::where('formato_id', $id)
             ->where('estudiante_id', auth()->user()->estudiante->id)->delete();
 
+        $encabezado_formato = EncabezadoFormato::where('formato_id', $id)
+            ->where('estudiante_id', auth()->user()->estudiante->id)->delete();
+
         return back();
     }
 }

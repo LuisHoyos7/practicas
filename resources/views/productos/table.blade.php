@@ -31,6 +31,7 @@
                         <th>Objetivos</th>
                         <th>Marco Metodologico</th>
                         <th>Bibliografia</th>
+                        <th>Observaciones</th>
                         <th>opciones</th>
                     </tr>
                 </thead>
@@ -47,6 +48,7 @@
                         <td>{{$producto->objetivos}}</td>
                         <td>{{$producto->marco_metodologico}}</td>
                         <td>{{$producto->bibliografia}}</td>
+                        <td>{{$producto->observaciones}}</td>
 
         
                             {{ Form::open(['route' => ['productos.destroy', $producto->id], 'method' => 'delete']) }}

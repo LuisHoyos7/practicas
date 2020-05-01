@@ -26,6 +26,7 @@
                         <th>Fecha de creacion del Diario</th>
                         <th>Semestre Actual</th>
                         <th>Practica en proceso</th>
+                        <th>Observaciones</th>
                         <th>opciones</th>
                     </tr>
                 </thead>
@@ -37,6 +38,7 @@
                         <td>{{$diario->fecha}}</td>
                         <td>{{$practica_pedagogicas->semestre->nombre}}</td>
                         <td>{{$practica_pedagogicas->practica->nombre}}</td>
+                        <td>{{$diario->observaciones}}</td>
                     
                             {{ Form::open(['route' => ['diarios.destroy', $diario->id], 'method' => 'delete']) }}
                             <td>

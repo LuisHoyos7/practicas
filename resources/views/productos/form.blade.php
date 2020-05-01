@@ -113,6 +113,15 @@
 @endif
 
 @if( auth()->user()->hasRole('docente'))
+<div class="row row1">
+    <div class="col-md-12">
+        <label for=""><h3>Observaciones / Notas Cualitativas</h3></label>
+        <textarea class ="form-control" name="observaciones">{{@$producto->observaciones}}</textarea>
+    </div>
+</div><br><br>
+@endif
+
+@if( auth()->user()->hasRole('docente'))
 
 <div class="row">
     <div class="col-md-12">

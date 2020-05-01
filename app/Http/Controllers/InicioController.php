@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Inscripcion;
-
+use App\Docente;
+use App\PracticaPedagogica;
+use App\Colegio;
+use App\grupo;
+use App\Estudiante;
+ 
 class InicioController extends Controller
 {
     /**
@@ -16,8 +21,15 @@ class InicioController extends Controller
     public function index()
     {
         $inscripciones = Inscripcion::count();
+        $docentes = Docente::count();
+        $practicas_activas = PracticaPedagogica::count();
+        $instituciones = Colegio::count();
+        $grupos = Grupo::count();
+        $practicas_finalizadas = PracticaPedagogica::where('finalizada',true)->count();
+        $correos = Estudiante::count();
 
-        return view('inicio.inicio', compact('inscripciones'));
+        return view('inicio.inicio', compact('inscripciones','docentes', 
+        'practicas_activas', 'instituciones','grupos','practicas_finalizadas', 'correos'));
     }
 
     /**

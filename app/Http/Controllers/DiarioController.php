@@ -131,15 +131,22 @@ class DiarioController extends Controller
         'finalizada' => true
         ];
 
+        $data3 = 
+        [
+        'observaciones' => $request->observaciones
+        ];
+
         $practica_pedagogica = PracticaPedagogica::where('id',$diario->practica_pedagogicas_id)->update($data);
  
         $practica_pedagogica = PracticaPedagogica::find($diario->practica_pedagogicas_id);
 
         if($practica_pedagogica->producto_finalizado == true && $practica_pedagogica->diario_finalizado ==true)
         {
-            $practica_pedagogica = PracticaPedagogica::where('id', $producto->practica_pedagogicas_id)
+            $practica_pedagogica = PracticaPedagogica::where('id', $diario->practica_pedagogicas_id)
             ->update($data2);
         }
+
+        $diario = Diario::where('id', $diario->id)->update($data3);
 
         return redirect()
             ->route('practicas.index');

@@ -117,17 +117,23 @@ class ProductoController extends Controller
             ->route('productos.index',['idPracticaPedagogica' => $producto->practica_pedagogicas_id]);
     }
 
-    public function aprobarPractica(Producto $producto)
+    public function aprobarPractica(Producto $producto, Request $request) 
 
     {
+        
         $data = 
         [
-        'producto_finalizado' => true
+        'producto_finalizado'   => true
         ];
 
         $data2 = 
         [
         'finalizada' => true
+        ];
+
+        $data3 = 
+        [
+        'observaciones' => $request->observaciones
         ];
 
 
@@ -141,6 +147,8 @@ class ProductoController extends Controller
             $practica_pedagogica = PracticaPedagogica::where('id', $producto->practica_pedagogicas_id)
             ->update($data2);
         }
+
+        $producto = Producto::where('id', $producto->id)->update($data3);
 
         return redirect()
             ->route('practicas.index');

@@ -19,7 +19,8 @@ class Producto extends Model
     'marco_teorico',
     'objetivos',
     'marco_metodologico',
-    'bibliografia'
+    'bibliografia',
+    'observaciones'
     
     ];
 }

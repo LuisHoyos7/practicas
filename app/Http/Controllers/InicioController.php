@@ -8,7 +8,7 @@ use App\Inscripcion;
 use App\Docente;
 use App\PracticaPedagogica;
 use App\Colegio;
-use App\grupo;
+use App\Grupo;
 use App\Estudiante;
  
 class InicioController extends Controller

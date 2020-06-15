@@ -98,6 +98,7 @@ padding-left: 30px !important;
 </style>
 
 <div class="slideshow-containerr">
+    
 <div class="mySlidess fadee">
        <div class="numbertextt">1 / 3</div>
        <img src="{{asset ('/images/uno.jpg') }}" style="width:1200px">

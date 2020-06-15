@@ -2,12 +2,16 @@
 
 @section('contentInicio')
 <style>
+
     .uno 
     {
         margin-right: -30px !important;
         margin-left: -30px !important;
         margin-top: -10px !important;
         height: 2700px !important;
+        background:white;
+        
+        
     }
 
     .cuatro{
@@ -19,10 +23,11 @@
     
     }
     .dos{
-        background: linear-gradient(180deg,##21f63daf,#395177);
+         background: linear-gradient(180deg,##21f63daf,#395177);
         /* background: -webkit-gradient(linear, left top, left bottom, from(#21c8f6), to(#637bff)) fixed; */
         /* background: -webkit-gradient(linear, left top, left bottom, from(#21c8f6), to(#395177)) fixed; */
         background: -webkit-gradient(linear, left top, left bottom, from(#21f63daf), to(#395177)) fixed;
+      
 
     }
     .tres
@@ -92,6 +97,10 @@ padding-left: 30px !important;
 
 </style>
 
+    @include('layouts.slider')
+
+
+<!-- Slideshow container -->
 <div class="row dos">
     <div class="col-lg-5">
         <!--begin::Portlet-->
@@ -289,7 +298,6 @@ padding-left: 30px !important;
     </footer>
     
     
-
 
 
 @endsection

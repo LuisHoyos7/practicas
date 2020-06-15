@@ -1,26 +1,5 @@
 
-<div class="slideshow-containerr">
-<div class="mySlidess fadee">
-       <div class="numbertextt">1 / 3</div>
-       <img src="{{ asset('/images/1.jpg') }}" style="width:1200px">
-       <div class="textt">Unicor</div>
-</div>
 
-<div class="mySlidess fadee">
-       <div class="numbertextt">2 / 3</div>
-       <img src="{{ asset('/images/2.jpg') }}" style="width:1200px">
-       <div class="textt">Unicor</div>
-</div>
-
-<div class="mySlidess fadee">
-       <div class="numbertextt">3 / 3</div>
-       <img src="{{ asset('images/3.jpg') }}" style="width:1200px">
-       <div class="textt">Unicor</div>
-</div>
-
-<a class="prevv" onclick="plusSlides(-1)">&#10094;</a>
-<a class="nextt" onclick="plusSlides(1)">&#10095;</a>
-</div>
 
 <style>
 

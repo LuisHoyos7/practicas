@@ -120,11 +120,12 @@ padding-left: 30px !important;
             <div class="kt-portlet__body">
 
                 <div class="primary phone:tw-pt-0 tw-text-white">
-                    <h2 class="tw-text-white tw-text-3xl tw-mb-4"><br><br><br><br><br>
-                        <p>Programa de Licenciatura en Ciencias Naturales</p>  
-                        <p>Sistema de Prácticas Pedagógicas Institucionales</p> 
+                    <h3 class="tw-text-white tw-text-2xl tw-mb-4"><br><br><br><br><br>
+                        <p>Facultad de Educación y Ciencias Humanas</p>  
+                        <p>Departamento de Ciencias Naturales y Educación Ambiental</p> 
+                        <p>Licenciatura en Ciencias Naturales y Educación Ambiental</p>
                         <p>Modalidad Presencial</p>
-                    </h2>
+                    </h3>
                 </div>
 
             </div>

@@ -52,6 +52,8 @@ Route::get('producto_pdf/{producto}', 'ProductoController@imprimirPdf')->name('p
 
 Route::get('diario_pdf/{diario}', 'DiarioController@imprimirPdf')->name('diario_pdf');
 
+
+
 });
 
 // RUTA DE PRUEBA
@@ -68,6 +70,8 @@ Route::get('inscripciones/aprobar/{inscripcion}/', 'InscripcionController@aproba
 
 
 
+
+//rutas empresas 
 
 
 

@@ -48,7 +48,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
 
-														<input placeholder="Email" autocomplete="off" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+														<input placeholder="usuario" autocomplete="off" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
 														@if ($errors->has('email'))
 															<span class="help-block">
@@ -62,7 +62,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 												<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
-													<input id="password" type="password" class="form-control form-control-last" placeholder="Password" name="password" required>
+													<input id="password" type="password" class="form-control form-control-last" placeholder="contraseña" name="password" required>
 
 														@if ($errors->has('password'))
 															<span class="help-block">
@@ -72,13 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 												</div>
 
-												<div class="kt-login__extra">
-													<label class="kt-checkbox">
-														<input type="checkbox" name="remember"> Recordarme
-														<span></span>
-													</label>
-													<a href="javascript:;" id="kt_login_forgot">He olvidado mi contraseña</a>
-												</div>
+						
 												<div class="kt-login__actions">
 												<button type="submit" class=" btn btn-brand btn-pill btn-elevate ">
 													Ingresar
@@ -106,7 +100,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="kt-grid__item kt-grid__item--fluid kt-grid__item--center kt-grid kt-grid--ver kt-login__content" style="background: linear-gradient(180deg,#21c8f6,#395177)">
 						<div class="kt-login__section">
 							<div class="kt-login__block">
-								<center><h3 class="kt-login__title"><p>Sistema de Prácticas Pedagógicas Institucionales</p></h3></center>
+								<center><h3 class="kt-login__title"><p>Software de Prácticas Pedagógicas Investigativas</p></h3></center>
 								<br>
 								<div class="kt-login__desc">
 									<center><img src="{{asset('logos/logo_transparente.png')}}" width="150"></center>

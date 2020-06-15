@@ -81,7 +81,7 @@
                                         </a>
 
                                         <a type="button" href="{{route('productos.index',['idPracticaPedagogica' => $practica_pedagogica->id])}}" class="btn btn-info btn-sm">
-                                        Producto
+                                        Sistematización
                                         </a>
                                     @endif
 

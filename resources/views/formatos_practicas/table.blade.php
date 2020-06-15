@@ -6,8 +6,8 @@
             Informacion de Formatos
             </h3>
         </div>
-        
     </div>
+   
 <div class="row">      
     <div class="kt-portlet__body row1">
 <table class="table table-hover" id="formato">

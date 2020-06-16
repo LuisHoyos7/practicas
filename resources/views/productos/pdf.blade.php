@@ -86,3 +86,12 @@
         {!! $producto->bibliografia !!}
     </div>
 </div>
+
+
+<div class="galeria">
+    @foreach ($array_uno as $imagen )
+        <div class="col-md-6">
+            <img src="./storage/{{$imagen}}" style="width:700px; padding:20px;">
+        </div>
+    @endforeach
+</div>

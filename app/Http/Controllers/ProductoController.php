@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 use App\PracticaPedagogica;
 use App\Producto;
+
 
 class ProductoController extends Controller
 {
@@ -44,6 +45,7 @@ class ProductoController extends Controller
     public function store(Request $request) 
     {
 
+
         $producto = Producto::create($request->all());
     
         toastr()->success('Producto Registrado con Exito');
@@ -59,12 +61,23 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function imprimirPdf(Producto $producto)
-    {
+    { 
+        $files = Storage::disk('public')->files();
+
+        $array_uno = [];
+
+        foreach ($files as $file) {
+             $str = substr($file, 0, 1);
+             if($str == $producto->id){
+              array_push($array_uno, $file);
+             }
+        }
+
         $producto = Producto::find($producto->id);
 
         $practica = PracticaPedagogica::find($producto->practica_pedagogicas_id);
 
-        $pdf = \PDF::loadView('productos.pdf', compact('producto', 'practica'));
+        $pdf = \PDF::loadView('productos.pdf', compact('producto', 'practica', 'array_uno'));
 
         return $pdf->download('producto.pdf'); 
     }

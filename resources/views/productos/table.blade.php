@@ -70,6 +70,10 @@
                                         'onclick' => "return confirm('¿Seguro que desea eliminar este registro?')"
                                     ]) }}
 
+                                    <a href="{{route('dropzone',['idProducto' => $producto->id])}}" class="btn btn-info btn-sm">
+                                    Imagen
+                                    </a>
+
                                     @endif
 
                                      @if( auth()->user()->hasRole('docente'))

@@ -36,7 +36,7 @@ class FormatoPracticaController extends Controller
 
         $validar8 = PreguntaRespuesta::where('formato_id', 8)->where('estudiante_id', $estudiante_id)->count();
 
-        return view('formatos_practicas.index', compact('formatos','formato_id' ,'validar1','validar2','validar3', 'validar4','validar5','validar6','validar7','validar8'));
+        return view('formatos_practicas.index', compact('formatos','validar1','validar2','validar3', 'validar4','validar5','validar6','validar7','validar8'));
     }
 
    

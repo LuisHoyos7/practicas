@@ -91,7 +91,7 @@
 <div class="galeria">
     @foreach ($array_uno as $imagen )
         <div class="col-md-6">
-            <img src={{asset('/storage/app/public'.$imagen)}}" style="width:700px; padding:20px;">
+            <img src="{{ asset('./storage/app/public/'.$imagen) }}" style="width:700px; padding:20px;">
         </div>
     @endforeach
 </div>
